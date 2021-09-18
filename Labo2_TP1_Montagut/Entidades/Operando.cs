@@ -122,6 +122,11 @@ namespace Entidades
             }
         }
 
+        public static double operator +(Operando n1, Operando n2)
+        {
+            return n1.numero + n2.numero;
+        }
+
         private static double ValidarOperando(string strNumero)
         {
             Double.TryParse(strNumero, out double retorno);
