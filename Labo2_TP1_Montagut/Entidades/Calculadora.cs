@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    static class Calculadora
+    public static class Calculadora
     {
         public static double Operar(Operando num1,Operando num2,char operador) 
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Operando
+    public class Operando
     {
         private double numero;
 
@@ -52,7 +52,7 @@ namespace Entidades
             {
                 do
                 {
-                    binarioStr.Prepend((char) ( (int) numeroInt%2 ));
+                    binarioStr = (int)numeroInt%2 + binarioStr;
                     numeroInt = (int) numeroInt/2;
                 } while (numeroInt>0);
             }
@@ -74,7 +74,7 @@ namespace Entidades
         private static bool EsBinario (string binario) 
         {
             bool retorno=true;
-            for (int i = 0; i < binario.Length; i++)
+            for (int i = 0; i < binario.Length-1; i++)
             {
                 if(binario[i]!='0' && binario[i] != '1') 
                 {
