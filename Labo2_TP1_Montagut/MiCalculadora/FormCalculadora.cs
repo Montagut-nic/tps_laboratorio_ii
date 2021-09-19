@@ -81,6 +81,7 @@ namespace MiCalculadora
             txtNumero1.Text = string.Empty;
             txtNumero2.Text = string.Empty;
             lblResultado.Text = string.Empty;
+            // los botones de convertir estan deshabilitados para que no se intente convertir un string vacio
             btnConvertirABinario.Enabled = false;
             btnConvertirADecimal.Enabled = false;
             lstOperaciones.Items.Clear();
@@ -113,7 +114,7 @@ namespace MiCalculadora
                     lblResultado.Text = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
                     btnConvertirADecimal.Enabled = false;
                     btnConvertirABinario.Enabled = true;
-                    lstOperaciones.Items.Insert(0,txtNumero1.Text+" "+cmbOperador.Text +" "+txtNumero2.Text+" = "+lblResultado.Text+"\n");
+                    lstOperaciones.Items.Insert(0,txtNumero1.Text.Replace(" ","")+" "+cmbOperador.Text.Replace(" ", "")+ " "+txtNumero2.Text.Replace(" ", "")+ " = "+lblResultado.Text.Replace(" ", "")+ "\n");
                 }
             }
 

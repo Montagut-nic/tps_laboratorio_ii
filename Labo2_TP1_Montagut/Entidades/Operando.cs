@@ -27,6 +27,7 @@ namespace Entidades
         {
             char[] bufferBinario= binario.ToCharArray();
             Array.Reverse(bufferBinario);
+            // ejemplo, 1010 queda como 0101 
             int numeroInt=0;
             if (EsBinario(binario))
             {
@@ -35,6 +36,8 @@ namespace Entidades
                     if (bufferBinario[i]=='1')
                     {
                         numeroInt += (int)Math.Pow(2, i);
+                        // siguiendo el ejemplo, por bufferBinario[1] se eleva 2 a la 2 y se suma a numeroInt, por bufferBinario[3] se eleva
+                        // 2 a la 4 y se suma a numeroInt, queda que 1010 binario es igual a 10 decimal
                     }
                 }
                 return numeroInt.ToString();
@@ -53,6 +56,7 @@ namespace Entidades
         public string DecimalBinario(double numero)
         {
             string binarioStr = String.Empty;
+            // se queda con el valor absoluto y entero del double recibido
             int numeroInt = (int)Math.Abs(numero);
             if (numeroInt == 0) 
             {
@@ -62,7 +66,8 @@ namespace Entidades
             {
                 do
                 {
-                    binarioStr = (int)numeroInt%2 + binarioStr;
+                    // se va agregando el resto al inicio del string
+                    binarioStr = (int) numeroInt%2 + binarioStr;
                     numeroInt = (int) numeroInt/2;
                 } while (numeroInt>0);
             }
@@ -190,6 +195,7 @@ namespace Entidades
         /// <returns>retorna el numero como double o 0 si no se pudo convertir a double</returns>
         private static double ValidarOperando(string strNumero)
         {
+            // si TryParse falla, en out devuelve 0
             Double.TryParse(strNumero, out double retorno);
             return retorno;
         }
