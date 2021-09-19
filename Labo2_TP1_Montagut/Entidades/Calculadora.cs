@@ -8,6 +8,13 @@ namespace Entidades
 {
     public static class Calculadora
     {
+        /// <summary>
+        /// Realiza una operacion matematica
+        /// </summary>
+        /// <param name="num1">Primer numero de la operacion</param>
+        /// <param name="num2">Segundo numero de la operacion</param>
+        /// <param name="operador">Operador que determina que operacion matematica se realiza</param>
+        /// <returns>retorna el resultado de la operacion matematica como double</returns>
         public static double Operar(Operando num1,Operando num2,char operador) 
         {
             double retorno = 0;
@@ -30,15 +37,21 @@ namespace Entidades
             return retorno;
         }
 
+        /// <summary>
+        /// valida que el operador sea aplicable
+        /// </summary>
+        /// <param name="operador">char que se valida como operador</param>
+        /// <returns>retorna el operador o + </returns>
         private static char ValidarOperador(char operador) 
         {
-            if(operador == '-' || operador == '*' || operador == '/')
+            switch (operador)
             {
-                return operador;
-            }
-            else
-            {
-                return '+';
+                case '-':
+                case '*':
+                case '/':
+                    return operador;
+                default:
+                    return '+';
             }
         }
     }
