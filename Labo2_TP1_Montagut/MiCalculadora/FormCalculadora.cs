@@ -13,11 +13,19 @@ namespace MiCalculadora
 {
     public partial class FormCalculadora : Form
     {
+        /// <summary>
+        /// Inicializa la calculadora
+        /// </summary>
         public FormCalculadora()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Cuando se presiona el boton cerrar abre un mensaje y cierra el forms si se presiona Si
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Está seguro de querer salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -27,8 +35,11 @@ namespace MiCalculadora
 
         }
 
-        
-
+        /// <summary>
+        /// Al presionar el boton Convertir a Binario convierte un numero decimal valido a binario y lo muestra en el label Resultado  
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConvertirABinario_Click(object sender, EventArgs e)
         {
             Operando numero = new Operando();
@@ -39,9 +50,13 @@ namespace MiCalculadora
             lblResultado.Text = numero.DecimalBinario(lblResultado.Text);
             btnConvertirABinario.Enabled = false;
             btnConvertirADecimal.Enabled = true;
-
         }
 
+        /// <summary>
+        /// Al presionar el boton Convertir a Decimal convierte un numero binario valido a decimal y lo muestra en el label Resultado  
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConvertirADecimal_Click(object sender, EventArgs e)
         {
             Operando numero = new Operando();
@@ -58,6 +73,9 @@ namespace MiCalculadora
 
         }
 
+        /// <summary>
+        /// Limpia las cajas de texto, label, listbox y deshabilita las conversiones
+        /// </summary>
         private void Limpiar()
         {
             txtNumero1.Text = string.Empty;
@@ -68,6 +86,12 @@ namespace MiCalculadora
             lstOperaciones.Items.Clear();
         }
 
+        /// <summary>
+        /// Al presionar el boton Operar usa dos numeros validos de las text box numero 1 y 2 para realizar una operacion determinada por el operador de la combo box operador y 
+        /// muestra el resultado de la operacion en el label resultado, la operacion se agrega al list box Operaciones
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOperar_Click(object sender, EventArgs e)
         {
             if(string.IsNullOrWhiteSpace(txtNumero1.Text) || string.IsNullOrWhiteSpace(txtNumero2.Text))
@@ -95,18 +119,34 @@ namespace MiCalculadora
 
         }
 
-
+        /// <summary>
+        /// Cuando se inicia el forms llama a la funcion limpiar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormCalculadora_Load(object sender, EventArgs e)
         {
             Limpiar();
         }
 
+        /// <summary>
+        /// Cuando se presiona el boton limpiar llama a la funcion limpiar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
 
         }
 
+        /// <summary>
+        /// Recibe dos numeros y un operador como strings y realiza una operacion matematica
+        /// </summary>
+        /// <param name="numero1">Primer numero de la operacion</param>
+        /// <param name="numero2">Segundo numero de la operacion</param>
+        /// <param name="operador">Operador de la operacion</param>
+        /// <returns>Retorna el resultado de la operacion como un numero double</returns>
         private static double Operar(string numero1, string numero2, string operador)
         {
             Operando operando1 = new Operando(numero1);
