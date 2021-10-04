@@ -15,7 +15,7 @@ namespace Entidades
 
         public enum EMarca
         {
-            Chevrolet,
+            Chevrolet=1,
             Ford,
             Renault,
             Toyota,
@@ -26,7 +26,7 @@ namespace Entidades
 
         public enum ETamanio
         {
-            Chico,
+            Chico=1,
             Mediano,
             Grande
         }
@@ -94,8 +94,8 @@ namespace Entidades
         /// <summary>
         /// Determina si el chasis de dos vehiculos son iguales
         /// </summary>
-        /// <param name="v1">primer vehiculo</param>
-        /// <param name="v2">segundo vehiculo</param>
+        /// <param name="v1">primer vehiculo a comparar</param>
+        /// <param name="v2">segundo vehiculo a comparar</param>
         /// <returns>retorna true si el chasis es igual, de lo contrario devolvera false</returns>
         public static bool operator ==(Vehiculo v1, Vehiculo v2)
         {
@@ -103,18 +103,38 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Determina si el chasis de dos vehiculos es distinto
+        /// Determina si el chasis de dos vehiculos son distintos
         /// </summary>
-        /// <param name="v1">primer vehiculo</param>
-        /// <param name="v2">segundo vehiculo</param>
+        /// <param name="v1">primer vehiculo a comparar</param>
+        /// <param name="v2">segundo vehiculo a comparar</param>
         /// <returns>retorna true si el chasis es distinto, de lo contrario devolvera false</returns>
         public static bool operator !=(Vehiculo v1, Vehiculo v2)
         {
             return !(v1 == v2);
         }
 
+
+        /// <summary>
+        /// Determina si el objeto especificado es igual al objeto actual
+        /// </summary>
+        /// <param name="obj">objeto a comparar</param>
+        /// <returns>retorna true si el objeto especificado es igual al objeto actual</returns>
+        public override bool Equals(object obj)
+        {
+            return obj != null && obj is Vehiculo && this==(Vehiculo)obj;
+        }
+
+        /// <summary>
+        /// Determina el codigo hash para el objeto actual
+        /// </summary>
+        /// <returns>retorna el codigo hash para el objeto actual</returns>
+        public override int GetHashCode()
+        {
+            return chasis.GetHashCode()*23*17;
+        }
+
         #endregion
 
-       
+
     }
 }
