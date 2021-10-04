@@ -8,12 +8,18 @@ namespace Entidades
 {
     public class Suv : Vehiculo
     {
+        /// <summary>
+        /// Constructor de la clase SUV
+        /// </summary>
+        /// <param name="marca">valor de tipo enumerado EMarca con el que se setea el atributo marca</param>
+        /// <param name="chasis">string con el que se setea el atributo chasis</param>
+        /// <param name="color">valor de tipo ConsoleColor con el que se setea el atributo color</param>
         public Suv(EMarca marca, string chasis, ConsoleColor color)
             : base(chasis, marca, color)
         { }
 
         /// <summary>
-        /// SUV son 'Grande'
+        /// ReadOnly: Retornará el tamaño, que por defecto es Grande
         /// </summary>
         protected override ETamanio Tamanio
         {
@@ -23,6 +29,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Publica todos los datos del SUV.
+        /// </summary>
+        /// <returns>retorna un string con los datos del SUV</returns>
         public override sealed string Mostrar()
         {
             StringBuilder sb = new StringBuilder();

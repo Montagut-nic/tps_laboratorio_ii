@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    /// <summary>
-    /// La clase Vehiculo no deberá permitir que se instancien elementos de este tipo.
-    /// </summary>
     public abstract class Vehiculo
     {
         
@@ -24,6 +21,12 @@ namespace Entidades
             get;
         }
 
+        /// <summary>
+        /// Constructor de la clase Vehiculo
+        /// </summary>
+        /// <param name="marca">valor de tipo enumerado EMarca con el que se setea el atributo marca</param>
+        /// <param name="chasis">string con el que se setea el atributo chasis</param>
+        /// <param name="color">valor de tipo ConsoleColor con el que se setea el atributo color</param>
         public Vehiculo(string chasis, EMarca marca, ConsoleColor color)
         {
             this.chasis = chasis;
@@ -34,12 +37,17 @@ namespace Entidades
         /// <summary>
         /// Publica todos los datos del Vehiculo.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>retorna un string con los datos del Vehiculo</returns>
         public virtual string Mostrar()
         {
-            return this.ToString();
+            return (string)this;
         }
 
+        /// <summary>
+        /// Recibe un Vehiculo, retorna un string con los datos del Vehiculo
+        /// </summary>
+        /// <param name="p">vehiculo cuyos datos se van a retornar</param>
+        /// <returns>retorna un string con los datos del Vehiculo</returns>
         public static explicit operator string(Vehiculo p)
         {
             StringBuilder sb = new StringBuilder();
@@ -47,27 +55,27 @@ namespace Entidades
             sb.AppendLine("CHASIS: "+p.chasis+"\r\n");
             sb.AppendLine("MARCA : "+p.marca+"\r\n");
             sb.AppendLine("COLOR : "+p.color+"\r\n");
-            sb.AppendLine("---------------------");
 
             return sb.ToString();
         }
 
         /// <summary>
-        /// Dos vehiculos son iguales si comparten el mismo chasis
+        /// Determina si el chasis de dos vehiculos son iguales
         /// </summary>
-        /// <param name="v1"></param>
-        /// <param name="v2"></param>
-        /// <returns></returns>
+        /// <param name="v1">primer vehiculo</param>
+        /// <param name="v2">segundo vehiculo</param>
+        /// <returns>retorna true si el chasis es igual, de lo contrario devolvera false</returns>
         public static bool operator ==(Vehiculo v1, Vehiculo v2)
         {
             return (v1.chasis == v2.chasis);
         }
+
         /// <summary>
-        /// Dos vehiculos son distintos si su chasis es distinto
+        /// Determina si el chasis de dos vehiculos es distinto
         /// </summary>
-        /// <param name="v1"></param>
-        /// <param name="v2"></param>
-        /// <returns></returns>
+        /// <param name="v1">primer vehiculo</param>
+        /// <param name="v2">segundo vehiculo</param>
+        /// <returns>retorna true si el chasis es distinto, de lo contrario devolvera false</returns>
         public static bool operator !=(Vehiculo v1, Vehiculo v2)
         {
             return !(v1 == v2);
@@ -75,11 +83,19 @@ namespace Entidades
 
         public enum EMarca
         {
-            Chevrolet, Ford, Renault, Toyota, BMW, Honda, HarleyDavidson
+            Chevrolet, 
+            Ford, 
+            Renault, 
+            Toyota, 
+            BMW, 
+            Honda, 
+            HarleyDavidson
         }
         public enum ETamanio
         {
-            Chico, Mediano, Grande
+            Chico, 
+            Mediano, 
+            Grande
         }
     }
 }

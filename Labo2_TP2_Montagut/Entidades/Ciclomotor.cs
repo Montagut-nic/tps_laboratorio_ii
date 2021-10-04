@@ -8,13 +8,19 @@ namespace Entidades
 {
     public class Ciclomotor : Vehiculo
     {
+        /// <summary>
+        /// Constructor de la clase Ciclomotor
+        /// </summary>
+        /// <param name="marca">valor de tipo enumerado EMarca con el que se setea el atributo marca</param>
+        /// <param name="chasis">string con el que se setea el atributo chasis</param>
+        /// <param name="color">valor de tipo ConsoleColor con el que se setea el atributo color</param>
         public Ciclomotor(EMarca marca, string chasis, ConsoleColor color)
             :base(chasis,marca,color)
         {
         }
 
         /// <summary>
-        /// Ciclomotor son 'Chico'
+        /// ReadOnly: Retornará el tamaño, que por defecto es Chico
         /// </summary>
         protected override ETamanio Tamanio
         {
@@ -24,6 +30,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Publica todos los datos del Ciclomotor.
+        /// </summary>
+        /// <returns>retorna un string con los datos del Ciclomotor</returns>
         public override sealed string Mostrar()
         {
             StringBuilder sb = new StringBuilder();

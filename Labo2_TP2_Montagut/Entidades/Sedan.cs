@@ -8,31 +8,36 @@ using System.Drawing;
 
 namespace Entidades
 {
-    class Sedan : Vehiculo
+    public class Sedan : Vehiculo
     {
         
         ETipo tipo;
 
         /// <summary>
-        /// Por defecto, TIPO será CuatroPuertas
+        /// Constructor de la clase Sedan, por defecto, TIPO será CuatroPuertas
         /// </summary>
-        /// <param name="marca"></param>
-        /// <param name="chasis"></param>
-        /// <param name="color"></param>
+        /// <param name="marca">valor de tipo enumerado EMarca con el que se setea el atributo marca</param>
+        /// <param name="chasis">string con el que se setea el atributo chasis</param>
+        /// <param name="color">valor de tipo ConsoleColor con el que se setea el atributo color</param>
         public Sedan(EMarca marca, string chasis, ConsoleColor color)
-            : base(chasis, marca, color)
-        {
-            tipo = ETipo.CuatroPuertas;
-        }
+            : this(marca, chasis, color, ETipo.CuatroPuertas)
+        { }
 
+        /// <summary>
+        /// Constructor de la clase Sedan
+        /// </summary>
+        /// <param name="marca">valor de tipo enumerado EMarca con el que se setea el atributo marca</param>
+        /// <param name="chasis">string con el que se setea el atributo chasis</param>
+        /// <param name="color">valor de tipo ConsoleColor con el que se setea el atributo color</param>
+        /// <param name="tipo">valor de tipo enumerado ETipo con el que se setea el atributo tipo</param>
         public Sedan(EMarca marca, string chasis, ConsoleColor color, ETipo tipo)
-            :this(marca,chasis,color)
+            :base(chasis,marca,color)
         {
             this.tipo = tipo;
         }
 
         /// <summary>
-        /// Sedan son 'Mediano'
+        /// ReadOnly: Retornará el tamaño, que por defecto es Mediano
         /// </summary>
         protected override ETamanio Tamanio
         {
@@ -42,6 +47,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Publica todos los datos del Sedan.
+        /// </summary>
+        /// <returns>retorna un string con los datos del Sedan</returns>
         public override sealed string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
