@@ -41,18 +41,6 @@ namespace Entidades
         }
         #endregion
 
-        #region "Sobrecargas"
-
-        /// <summary>
-        /// Muestro el taller y TODOS los vehículos
-        /// </summary>
-        /// <returns>retorna un string con los datos del taller y de todos los vehiculos del taller</returns>
-        public override string ToString()
-        {
-            return Taller.Listar(this, ETipo.Todos);
-        }
-        #endregion
-
         #region "Métodos"
 
         /// <summary>
@@ -97,6 +85,18 @@ namespace Entidades
             }
 
             return sb.ToString();
+        }
+        #endregion
+
+        #region "Sobrecargas"
+
+        /// <summary>
+        /// Muestro el taller y TODOS los vehículos
+        /// </summary>
+        /// <returns>retorna un string con los datos del taller y de todos los vehiculos del taller</returns>
+        public override string ToString()
+        {
+            return Taller.Listar(this, ETipo.Todos);
         }
         #endregion
 

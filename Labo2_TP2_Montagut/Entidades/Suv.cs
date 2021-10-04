@@ -8,6 +8,9 @@ namespace Entidades
 {
     public class Suv : Vehiculo
     {
+
+        #region "Constructores"
+
         /// <summary>
         /// Constructor de la clase SUV
         /// </summary>
@@ -17,6 +20,10 @@ namespace Entidades
         public Suv(EMarca marca, string chasis, ConsoleColor color)
             : base(chasis, marca, color)
         { }
+
+        #endregion
+
+        #region "Propiedades"
 
         /// <summary>
         /// ReadOnly: Retornará el tamaño, que por defecto es Grande
@@ -28,6 +35,10 @@ namespace Entidades
                 return ETamanio.Grande;
             }
         }
+
+        #endregion
+
+        #region "Métodos"
 
         /// <summary>
         /// Publica todos los datos del SUV.
@@ -45,5 +56,7 @@ namespace Entidades
 
             return sb.ToString();
         }
+
+        #endregion
     }
 }

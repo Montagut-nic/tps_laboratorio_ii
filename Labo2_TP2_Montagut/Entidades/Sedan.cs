@@ -13,6 +13,14 @@ namespace Entidades
         
         ETipo tipo;
 
+        public enum ETipo
+        {
+            CuatroPuertas,
+            CincoPuertas
+        }
+
+        #region "Constructores"
+
         /// <summary>
         /// Constructor de la clase Sedan, por defecto, TIPO será CuatroPuertas
         /// </summary>
@@ -36,6 +44,10 @@ namespace Entidades
             this.tipo = tipo;
         }
 
+        #endregion
+
+        #region "Propiedades"
+
         /// <summary>
         /// ReadOnly: Retornará el tamaño, que por defecto es Mediano
         /// </summary>
@@ -46,6 +58,10 @@ namespace Entidades
                 return ETamanio.Mediano;
             }
         }
+
+        #endregion
+
+        #region "Métodos"
 
         /// <summary>
         /// Publica todos los datos del Sedan.
@@ -65,10 +81,7 @@ namespace Entidades
             return sb.ToString();
         }
 
-        public enum ETipo
-        {
-            CuatroPuertas,
-            CincoPuertas
-        }
+        #endregion
+
     }
 }

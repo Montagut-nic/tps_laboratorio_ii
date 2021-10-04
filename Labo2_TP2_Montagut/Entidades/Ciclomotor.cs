@@ -8,6 +8,9 @@ namespace Entidades
 {
     public class Ciclomotor : Vehiculo
     {
+
+        #region "Constructores"
+
         /// <summary>
         /// Constructor de la clase Ciclomotor
         /// </summary>
@@ -19,6 +22,10 @@ namespace Entidades
         {
         }
 
+        #endregion
+
+        #region "Propiedades"
+
         /// <summary>
         /// ReadOnly: Retornará el tamaño, que por defecto es Chico
         /// </summary>
@@ -29,6 +36,10 @@ namespace Entidades
                 return ETamanio.Chico;
             }
         }
+
+        #endregion
+
+        #region "Métodos"
 
         /// <summary>
         /// Publica todos los datos del Ciclomotor.
@@ -46,5 +57,7 @@ namespace Entidades
 
             return sb.ToString();
         }
+
+        #endregion
     }
 }

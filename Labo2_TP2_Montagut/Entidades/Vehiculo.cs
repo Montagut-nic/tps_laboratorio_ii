@@ -13,13 +13,25 @@ namespace Entidades
         string chasis;
         ConsoleColor color;
 
-        /// <summary>
-        /// ReadOnly: Retornará el tamaño
-        /// </summary>
-        protected abstract ETamanio Tamanio
+        public enum EMarca
         {
-            get;
+            Chevrolet,
+            Ford,
+            Renault,
+            Toyota,
+            BMW,
+            Honda,
+            HarleyDavidson
         }
+
+        public enum ETamanio
+        {
+            Chico,
+            Mediano,
+            Grande
+        }
+
+        #region "Constructores"
 
         /// <summary>
         /// Constructor de la clase Vehiculo
@@ -34,6 +46,22 @@ namespace Entidades
             this.color = color;
         }
 
+        #endregion
+
+        #region "Propiedades"
+
+        /// <summary>
+        /// ReadOnly: Retornará el tamaño
+        /// </summary>
+        protected abstract ETamanio Tamanio
+        {
+            get;
+        }
+
+        #endregion
+
+        #region "Métodos"
+
         /// <summary>
         /// Publica todos los datos del Vehiculo.
         /// </summary>
@@ -42,6 +70,10 @@ namespace Entidades
         {
             return (string)this;
         }
+
+        #endregion
+
+        #region "Sobrecargas"
 
         /// <summary>
         /// Recibe un Vehiculo, retorna un string con los datos del Vehiculo
@@ -81,21 +113,8 @@ namespace Entidades
             return !(v1 == v2);
         }
 
-        public enum EMarca
-        {
-            Chevrolet, 
-            Ford, 
-            Renault, 
-            Toyota, 
-            BMW, 
-            Honda, 
-            HarleyDavidson
-        }
-        public enum ETamanio
-        {
-            Chico, 
-            Mediano, 
-            Grande
-        }
+        #endregion
+
+       
     }
 }
