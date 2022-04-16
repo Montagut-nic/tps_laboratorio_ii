@@ -52,57 +52,63 @@ namespace MiCalculadora
             "-",
             "*",
             "/"});
-            this.cmbOperador.Location = new System.Drawing.Point(167, 69);
+            this.cmbOperador.Location = new System.Drawing.Point(191, 92);
+            this.cmbOperador.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbOperador.Name = "cmbOperador";
-            this.cmbOperador.Size = new System.Drawing.Size(128, 53);
+            this.cmbOperador.Size = new System.Drawing.Size(146, 62);
             this.cmbOperador.TabIndex = 1;
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(301, 170);
+            this.btnCerrar.Location = new System.Drawing.Point(344, 227);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(143, 43);
-            this.btnCerrar.TabIndex = 7;
+            this.btnCerrar.Size = new System.Drawing.Size(163, 57);
+            this.btnCerrar.TabIndex = 6;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnConvertirABinario
             // 
-            this.btnConvertirABinario.Location = new System.Drawing.Point(12, 238);
+            this.btnConvertirABinario.Location = new System.Drawing.Point(14, 317);
+            this.btnConvertirABinario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConvertirABinario.Name = "btnConvertirABinario";
-            this.btnConvertirABinario.Size = new System.Drawing.Size(208, 43);
-            this.btnConvertirABinario.TabIndex = 8;
+            this.btnConvertirABinario.Size = new System.Drawing.Size(238, 57);
+            this.btnConvertirABinario.TabIndex = 7;
             this.btnConvertirABinario.Text = "Convertir a Binario";
             this.btnConvertirABinario.UseVisualStyleBackColor = true;
             this.btnConvertirABinario.Click += new System.EventHandler(this.btnConvertirABinario_Click);
             // 
             // btnConvertirADecimal
             // 
-            this.btnConvertirADecimal.Location = new System.Drawing.Point(226, 238);
+            this.btnConvertirADecimal.Location = new System.Drawing.Point(258, 317);
+            this.btnConvertirADecimal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConvertirADecimal.Name = "btnConvertirADecimal";
-            this.btnConvertirADecimal.Size = new System.Drawing.Size(218, 43);
-            this.btnConvertirADecimal.TabIndex = 9;
+            this.btnConvertirADecimal.Size = new System.Drawing.Size(249, 57);
+            this.btnConvertirADecimal.TabIndex = 8;
             this.btnConvertirADecimal.Text = "Convertir a Decimal";
             this.btnConvertirADecimal.UseVisualStyleBackColor = true;
             this.btnConvertirADecimal.Click += new System.EventHandler(this.btnConvertirADecimal_Click);
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(156, 170);
+            this.btnLimpiar.Location = new System.Drawing.Point(178, 227);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(139, 43);
-            this.btnLimpiar.TabIndex = 6;
+            this.btnLimpiar.Size = new System.Drawing.Size(159, 57);
+            this.btnLimpiar.TabIndex = 5;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnOperar
             // 
-            this.btnOperar.Location = new System.Drawing.Point(12, 170);
+            this.btnOperar.Location = new System.Drawing.Point(14, 227);
+            this.btnOperar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnOperar.Name = "btnOperar";
-            this.btnOperar.Size = new System.Drawing.Size(138, 43);
-            this.btnOperar.TabIndex = 5;
+            this.btnOperar.Size = new System.Drawing.Size(158, 57);
+            this.btnOperar.TabIndex = 4;
             this.btnOperar.Text = "Operar";
             this.btnOperar.UseVisualStyleBackColor = true;
             this.btnOperar.Click += new System.EventHandler(this.btnOperar_Click);
@@ -111,43 +117,46 @@ namespace MiCalculadora
             // 
             this.lblResultado.AutoSize = true;
             this.lblResultado.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblResultado.Location = new System.Drawing.Point(311, 14);
+            this.lblResultado.Location = new System.Drawing.Point(355, 19);
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(0, 32);
+            this.lblResultado.Size = new System.Drawing.Size(0, 41);
             this.lblResultado.TabIndex = 2;
             // 
             // txtNumero1
             // 
             this.txtNumero1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNumero1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNumero1.Location = new System.Drawing.Point(12, 69);
+            this.txtNumero1.Location = new System.Drawing.Point(14, 92);
+            this.txtNumero1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumero1.Name = "txtNumero1";
-            this.txtNumero1.Size = new System.Drawing.Size(138, 50);
+            this.txtNumero1.Size = new System.Drawing.Size(157, 61);
             this.txtNumero1.TabIndex = 0;
             // 
             // txtNumero2
             // 
             this.txtNumero2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNumero2.Location = new System.Drawing.Point(311, 69);
+            this.txtNumero2.Location = new System.Drawing.Point(355, 92);
+            this.txtNumero2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumero2.Name = "txtNumero2";
-            this.txtNumero2.Size = new System.Drawing.Size(133, 50);
-            this.txtNumero2.TabIndex = 3;
+            this.txtNumero2.Size = new System.Drawing.Size(151, 61);
+            this.txtNumero2.TabIndex = 2;
             // 
             // lstOperaciones
             // 
             this.lstOperaciones.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lstOperaciones.FormattingEnabled = true;
-            this.lstOperaciones.ItemHeight = 32;
-            this.lstOperaciones.Location = new System.Drawing.Point(457, 14);
+            this.lstOperaciones.ItemHeight = 41;
+            this.lstOperaciones.Location = new System.Drawing.Point(522, 19);
+            this.lstOperaciones.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lstOperaciones.Name = "lstOperaciones";
-            this.lstOperaciones.Size = new System.Drawing.Size(210, 260);
-            this.lstOperaciones.TabIndex = 4;
+            this.lstOperaciones.Size = new System.Drawing.Size(239, 332);
+            this.lstOperaciones.TabIndex = 3;
             // 
             // FormCalculadora
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 300);
+            this.ClientSize = new System.Drawing.Size(776, 400);
             this.Controls.Add(this.lstOperaciones);
             this.Controls.Add(this.txtNumero2);
             this.Controls.Add(this.txtNumero1);
@@ -159,11 +168,12 @@ namespace MiCalculadora
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.cmbOperador);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCalculadora";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Calculadora de Nicolas Montagut del curso 2do C";
+            this.Text = "Calculadora de Nicolas Montagut del curso 2°D";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.btnCerrar_Click);
             this.Load += new System.EventHandler(this.FormCalculadora_Load);
             this.ResumeLayout(false);

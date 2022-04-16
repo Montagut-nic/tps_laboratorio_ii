@@ -36,8 +36,8 @@ namespace Entidades
                     if (bufferBinario[i]=='1')
                     {
                         numeroInt += (int)Math.Pow(2, i);
-                        // siguiendo el ejemplo, por bufferBinario[1] se eleva 2 a la 2 y se suma a numeroInt, por bufferBinario[3] se eleva
-                        // 2 a la 4 y se suma a numeroInt, queda que 1010 binario es igual a 10 decimal
+                        // siguiendo el ejemplo, por bufferBinario[1] se eleva 2 a la 1 y se suma a numeroInt (2), por bufferBinario[3] se eleva
+                        // 2 a la 3 y se suma a numeroInt (2+8), queda que 1010 binario es igual a 10 decimal
                     }
                 }
                 return numeroInt.ToString();
@@ -97,7 +97,7 @@ namespace Entidades
         /// </summary>
         /// <param name="binario">Es el string que contiene el numero binario a validar</param>
         /// <returns>retorna false si contiene por lo menos un caracter que no sea un 1 o 0, en caso contrario retorna true</returns>
-        private static bool EsBinario (string binario) 
+        private bool EsBinario (string binario) 
         {
             bool retorno=true;
             for (int i = 0; i < binario.Length-1; i++)

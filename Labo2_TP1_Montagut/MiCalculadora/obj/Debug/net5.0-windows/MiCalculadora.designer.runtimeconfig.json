@@ -6,8 +6,8 @@
       "version": "5.0.0"
     },
     "additionalProbingPaths": [
-      "C:\\Users\\zepe\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\zepe\\.nuget\\packages"
+      "C:\\Users\\nicom\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\nicom\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

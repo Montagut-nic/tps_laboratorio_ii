@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\zepe\\.nuget\\packages\\": {}
+    "C:\\Users\\nicom\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\zepe\\Desktop\\cosas de monta\\LaboProgra2\\tps_laboratorio_ii\\Labo2_TP1_Montagut\\Entidades\\Entidades.csproj",
+      "projectUniqueName": "C:\\Users\\nicom\\source\\repos\\tps_laboratorio_ii\\Labo2_TP1_Montagut\\Entidades\\Entidades.csproj",
       "projectName": "Entidades",
-      "projectPath": "C:\\Users\\zepe\\Desktop\\cosas de monta\\LaboProgra2\\tps_laboratorio_ii\\Labo2_TP1_Montagut\\Entidades\\Entidades.csproj",
-      "packagesPath": "C:\\Users\\zepe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\zepe\\Desktop\\cosas de monta\\LaboProgra2\\tps_laboratorio_ii\\Labo2_TP1_Montagut\\Entidades\\obj\\",
+      "projectPath": "C:\\Users\\nicom\\source\\repos\\tps_laboratorio_ii\\Labo2_TP1_Montagut\\Entidades\\Entidades.csproj",
+      "packagesPath": "C:\\Users\\nicom\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nicom\\source\\repos\\tps_laboratorio_ii\\Labo2_TP1_Montagut\\Entidades\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\zepe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nicom\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
