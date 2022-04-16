@@ -56,7 +56,7 @@ namespace MiCalculadora
             this.cmbOperador.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbOperador.Name = "cmbOperador";
             this.cmbOperador.Size = new System.Drawing.Size(146, 62);
-            this.cmbOperador.TabIndex = 1;
+            this.cmbOperador.TabIndex = 3;
             // 
             // btnCerrar
             // 
@@ -64,7 +64,7 @@ namespace MiCalculadora
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(163, 57);
-            this.btnCerrar.TabIndex = 6;
+            this.btnCerrar.TabIndex = 8;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -75,7 +75,7 @@ namespace MiCalculadora
             this.btnConvertirABinario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConvertirABinario.Name = "btnConvertirABinario";
             this.btnConvertirABinario.Size = new System.Drawing.Size(238, 57);
-            this.btnConvertirABinario.TabIndex = 7;
+            this.btnConvertirABinario.TabIndex = 9;
             this.btnConvertirABinario.Text = "Convertir a Binario";
             this.btnConvertirABinario.UseVisualStyleBackColor = true;
             this.btnConvertirABinario.Click += new System.EventHandler(this.btnConvertirABinario_Click);
@@ -86,7 +86,7 @@ namespace MiCalculadora
             this.btnConvertirADecimal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnConvertirADecimal.Name = "btnConvertirADecimal";
             this.btnConvertirADecimal.Size = new System.Drawing.Size(249, 57);
-            this.btnConvertirADecimal.TabIndex = 8;
+            this.btnConvertirADecimal.TabIndex = 10;
             this.btnConvertirADecimal.Text = "Convertir a Decimal";
             this.btnConvertirADecimal.UseVisualStyleBackColor = true;
             this.btnConvertirADecimal.Click += new System.EventHandler(this.btnConvertirADecimal_Click);
@@ -97,7 +97,7 @@ namespace MiCalculadora
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(159, 57);
-            this.btnLimpiar.TabIndex = 5;
+            this.btnLimpiar.TabIndex = 7;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -108,7 +108,7 @@ namespace MiCalculadora
             this.btnOperar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnOperar.Name = "btnOperar";
             this.btnOperar.Size = new System.Drawing.Size(158, 57);
-            this.btnOperar.TabIndex = 4;
+            this.btnOperar.TabIndex = 6;
             this.btnOperar.Text = "Operar";
             this.btnOperar.UseVisualStyleBackColor = true;
             this.btnOperar.Click += new System.EventHandler(this.btnOperar_Click);
@@ -120,7 +120,7 @@ namespace MiCalculadora
             this.lblResultado.Location = new System.Drawing.Point(355, 19);
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(0, 41);
-            this.lblResultado.TabIndex = 2;
+            this.lblResultado.TabIndex = 1;
             // 
             // txtNumero1
             // 
@@ -130,7 +130,7 @@ namespace MiCalculadora
             this.txtNumero1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumero1.Name = "txtNumero1";
             this.txtNumero1.Size = new System.Drawing.Size(157, 61);
-            this.txtNumero1.TabIndex = 0;
+            this.txtNumero1.TabIndex = 2;
             // 
             // txtNumero2
             // 
@@ -139,7 +139,7 @@ namespace MiCalculadora
             this.txtNumero2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNumero2.Name = "txtNumero2";
             this.txtNumero2.Size = new System.Drawing.Size(151, 61);
-            this.txtNumero2.TabIndex = 2;
+            this.txtNumero2.TabIndex = 4;
             // 
             // lstOperaciones
             // 
@@ -150,7 +150,7 @@ namespace MiCalculadora
             this.lstOperaciones.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lstOperaciones.Name = "lstOperaciones";
             this.lstOperaciones.Size = new System.Drawing.Size(239, 332);
-            this.lstOperaciones.TabIndex = 3;
+            this.lstOperaciones.TabIndex = 5;
             // 
             // FormCalculadora
             // 
