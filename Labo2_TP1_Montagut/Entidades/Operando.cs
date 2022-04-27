@@ -114,9 +114,8 @@ namespace Entidades
         /// <summary>
         /// Constructor de la clase Operando, setea numero en 0
         /// </summary>
-        public Operando()
+        public Operando() : this(0)
         {
-            this.numero = 0;
         }
 
         /// <summary>

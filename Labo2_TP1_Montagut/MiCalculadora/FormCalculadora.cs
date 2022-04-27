@@ -107,7 +107,7 @@ namespace MiCalculadora
                 }
                 else
                 {
-                    if (String.IsNullOrEmpty(cmbOperador.SelectedText))
+                    if (String.IsNullOrEmpty((string)cmbOperador.SelectedItem))
                     {
                         cmbOperador.Text = "+";
                     }
