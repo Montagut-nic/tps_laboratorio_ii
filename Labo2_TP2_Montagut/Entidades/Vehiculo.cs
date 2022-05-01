@@ -9,9 +9,9 @@ namespace Entidades
     public abstract class Vehiculo
     {
         
-        EMarca marca;
-        string chasis;
-        ConsoleColor color;
+        private EMarca marca;
+        private string chasis;
+        private ConsoleColor color;
 
         public enum EMarca
         {
