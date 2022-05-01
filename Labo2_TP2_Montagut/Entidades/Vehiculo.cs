@@ -84,9 +84,10 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("CHASIS: "+p.chasis+"\r\n");
-            sb.AppendLine("MARCA : "+p.marca+"\r\n");
-            sb.AppendLine("COLOR : "+p.color+"\r\n");
+            sb.AppendLine("CHASIS: "+p.chasis);
+            sb.AppendLine("MARCA : "+p.marca);
+            sb.AppendLine("COLOR : "+p.color);
+            sb.AppendLine("---------------------");
 
             return sb.ToString();
         }
@@ -111,26 +112,6 @@ namespace Entidades
         public static bool operator !=(Vehiculo v1, Vehiculo v2)
         {
             return !(v1 == v2);
-        }
-
-
-        /// <summary>
-        /// Determina si el objeto especificado es igual al objeto actual
-        /// </summary>
-        /// <param name="obj">objeto a comparar</param>
-        /// <returns>retorna true si el objeto especificado es igual al objeto actual</returns>
-        public override bool Equals(object obj)
-        {
-            return obj != null && obj is Vehiculo && this==(Vehiculo)obj;
-        }
-
-        /// <summary>
-        /// Determina el codigo hash para el objeto actual
-        /// </summary>
-        /// <returns>retorna el codigo hash para el objeto actual</returns>
-        public override int GetHashCode()
-        {
-            return chasis.GetHashCode()*23*17;
         }
 
         #endregion

@@ -22,9 +22,9 @@ namespace Entidades
         /// <summary>
         /// Constructor de la clase Taller, por defecto su espacioDisponible sera 0
         /// </summary>
-        private Taller()
+        private Taller() : this(0)
         {
-            this.vehiculos = new List<Vehiculo>();
+            
         }
 
         /// <summary>
@@ -32,10 +32,10 @@ namespace Entidades
         /// </summary>
         /// <param name="espacioDisponible">cantidad de espacio dispoible a setear</param>
         public Taller(int espacioDisponible)
-            :this()
         {
-            if (espacioDisponible > 0) 
-            { 
+            if (espacioDisponible >= 0) 
+            {
+                this.vehiculos = new List<Vehiculo>();
                 this.espacioDisponible = espacioDisponible;
             }
         }

@@ -17,3 +17,9 @@ C:\Users\zepe\Desktop\cosas de monta\LaboProgra2\tps_laboratorio_ii\Labo2_TP2_Mo
 C:\Users\zepe\Desktop\cosas de monta\LaboProgra2\tps_laboratorio_ii\Labo2_TP2_Montagut\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\zepe\Desktop\cosas de monta\LaboProgra2\tps_laboratorio_ii\Labo2_TP2_Montagut\Entidades\obj\Debug\Entidades.dll
 C:\Users\zepe\Desktop\cosas de monta\LaboProgra2\tps_laboratorio_ii\Labo2_TP2_Montagut\Entidades\obj\Debug\Entidades.pdb
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP2_Montagut\Entidades\bin\Debug\Entidades.dll
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP2_Montagut\Entidades\bin\Debug\Entidades.pdb
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP2_Montagut\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP2_Montagut\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP2_Montagut\Entidades\obj\Debug\Entidades.dll
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP2_Montagut\Entidades\obj\Debug\Entidades.pdb

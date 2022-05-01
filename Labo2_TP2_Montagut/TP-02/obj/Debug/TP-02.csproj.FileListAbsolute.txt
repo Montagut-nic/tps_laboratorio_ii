@@ -31,3 +31,13 @@ C:\Users\zepe\Desktop\cosas de monta\LaboProgra2\tps_laboratorio_ii\Labo2_TP2_Mo
 C:\Users\zepe\Desktop\cosas de monta\LaboProgra2\tps_laboratorio_ii\Labo2_TP2_Montagut\TP-02\bin\Debug\Entidades.pdb
 C:\Users\zepe\Desktop\cosas de monta\LaboProgra2\tps_laboratorio_ii\Labo2_TP2_Montagut\TP-02\obj\Debug\TP-02.csproj.CopyComplete
 C:\Users\zepe\Desktop\cosas de monta\LaboProgra2\tps_laboratorio_ii\Labo2_TP2_Montagut\TP-02\obj\Debug\TP-02.pdb
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP2_Montagut\TP-02\bin\Debug\TP-02.exe.config
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP2_Montagut\TP-02\bin\Debug\TP-02.exe
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP2_Montagut\TP-02\bin\Debug\TP-02.pdb
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP2_Montagut\TP-02\bin\Debug\Entidades.dll
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP2_Montagut\TP-02\bin\Debug\Entidades.pdb
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP2_Montagut\TP-02\obj\Debug\TP-02.csproj.AssemblyReference.cache
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP2_Montagut\TP-02\obj\Debug\TP-02.csproj.CoreCompileInputs.cache
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP2_Montagut\TP-02\obj\Debug\TP-02.csproj.CopyComplete
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP2_Montagut\TP-02\obj\Debug\TP-02.exe
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP2_Montagut\TP-02\obj\Debug\TP-02.pdb
