@@ -133,7 +133,13 @@ namespace Entidades
         {
             if (t.vehiculos.Count > 0) 
             { 
-                t.vehiculos.Remove(vehiculo);
+                foreach(Vehiculo item in t.vehiculos)
+                {
+                    if(item == vehiculo)
+                    {
+                        t.vehiculos.Remove(item);
+                    }
+                }
             }
             return t;
         }
