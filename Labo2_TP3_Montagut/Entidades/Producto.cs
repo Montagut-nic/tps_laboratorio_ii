@@ -2,7 +2,14 @@
 
 namespace Entidades
 {
-    public class Productos
+    public abstract class Producto <T> where T : Enum
     {
+        public int id;
+        public string nombre;
+        public int cantidad;
+        public float precio;
+        public T tipo;
+
+        
     }
 }

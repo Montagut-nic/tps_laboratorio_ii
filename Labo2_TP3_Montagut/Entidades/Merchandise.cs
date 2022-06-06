@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Elaborado : Producto <Elaborado.ETipo>
+    public class Merchandise : Producto<Merchandise.ETipo>
     {
-
         public enum ETipo
         {
-            Milanesa,
-            Hamburguesa,
-            Leche
+            Remera,
+            Buzo,
+            Campera
         }
-        public enum EMarca
+        public enum ETalle
         {
-            Hierbalex,
-            NotCorp,
-            GranjaDeLaLuna
+            Unico,
+            S,
+            M,
+            L
         }
     }
 }

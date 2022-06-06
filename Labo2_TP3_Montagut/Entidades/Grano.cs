@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class Granos
+    public class Grano : Producto <Grano.ETipo>
     {
+        int pesoEnGramos;
+        float pesoEnKilogramos;
+        
+
+        public enum ETipo
+        {
+            Lentejas,
+            Arroz,
+            Avena,
+            Chia,
+            Garbanzo,
+            Porotos,
+            MixSemillas
+        }
     }
 }
