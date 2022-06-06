@@ -50,6 +50,7 @@
             this.btnContinuar.TabIndex = 1;
             this.btnContinuar.Text = "Continuar";
             this.btnContinuar.UseVisualStyleBackColor = true;
+            this.btnContinuar.Click += new System.EventHandler(this.btnContinuar_Click);
             // 
             // txbIdDeCliente
             // 
@@ -68,7 +69,7 @@
             this.Controls.Add(this.btnContinuar);
             this.Controls.Add(this.btnVolver);
             this.Name = "MenuIngresarIdCliente";
-            this.Text = "MenuIngresarIdCliente";
+            this.Text = "Ingrese id del cliente miembro";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -8,7 +8,7 @@ namespace Entidades
         public string nombre;
         public int cantidad;
         public float precio;
-        public T tipo;
+        public T etipo;
 
         
     }
