@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Entidades
@@ -33,7 +34,7 @@ namespace Entidades
         }
 
        /// <summary>
-       /// Carga la coleccion de clientes desde un archivo .json, si no existe crea un archivo .json vacio y su directorio
+       /// Carga la coleccion de clientes desde una base de datos, 
        /// </summary>
         private static void CargarClientes()
         {
@@ -43,16 +44,53 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Carga la coleccion de productos desde la base de datos, si no existe crea una base de datos vacia
+        /// Devuelve un coleccion de productos desde un archivo .json, si existe el archivo, sino devuelve una coleccion vacia
         /// </summary>
         public static ArrayList CargarProductos() 
         {
-            //TODO: despues cambiar por lectura de bd
+            string archivo = string.Empty;
+            string[] registroRecuperado;
+            StringBuilder sb= new StringBuilder();
             ArrayList listaProd = new ArrayList();
-            
-            listaProd.Add(new Merchandise("buzo azul estampado",23,28f,Merchandise.ETipoPrenda.Buzo,Merchandise.ETalle.L));
-            listaProd.Add(new Grano("avena integral", 23000, 28f, Grano.ETipoGrano.Avena));
-            listaProd.Add(new Elaborado("medallon de lenteja 4u", 23, 420f, Elaborado.ETipo.Hamburguesa, Elaborado.EMarca.NotCorp)) ;
+            if (Directory.Exists(path)) 
+            {
+                string[] archivosEnElPath = Directory.GetFiles(path);
+                foreach (string pathArchivo in archivosEnElPath)
+                {
+                    if (pathArchivo.Contains("productos") && pathArchivo.Contains(".json"))
+                    {
+                        archivo = pathArchivo;
+                        break;
+                    }
+                }
+                if (!string.IsNullOrWhiteSpace(archivo))
+                {
+                    registroRecuperado = File.ReadAllLines(archivo);
+                    foreach (string line in registroRecuperado) 
+                    {
+                        sb.Append(line);
+                        if (line.EndsWith('}') )
+                        {
+                            if (sb.ToString().Contains("Marca"))
+                            {
+                                Elaborado prod = JsonSerializer.Deserialize<Elaborado>(sb.ToString());
+                                listaProd.Add(prod);
+                            }
+                            else if (sb.ToString().Contains("Talle"))
+                            {
+                                Merchandise prod = JsonSerializer.Deserialize<Merchandise>(sb.ToString());
+                                listaProd.Add(prod);
+                            }
+                            else
+                            {
+                                Grano prod = JsonSerializer.Deserialize<Grano>(sb.ToString());
+                                listaProd.Add(prod);
+                            }
+                            sb.Clear();
+                        }
+                    }
+                }
+            }
             return listaProd;
         }
 
@@ -72,7 +110,7 @@ namespace Entidades
                     string[] archivosEnElPath = Directory.GetFiles(path);
                     foreach (string pathArchivo in archivosEnElPath)
                     {
-                        if (pathArchivo.Contains(DateTime.Today.ToString("MM-yyyy")) )
+                        if (pathArchivo.Contains(DateTime.Today.ToString("MM-yyyy")) && pathArchivo.Contains(".txt") )
                         {
                             archivo = pathArchivo;
                             break;
@@ -92,7 +130,37 @@ namespace Entidades
             }
         }
 
+        public static void GuardarHistorialDeVentas(string ticket)
+        {
+            StreamWriter streamWriter = null;
+            try
+            {
+                streamWriter = new StreamWriter(path+"Historial-De-Ventas-"+DateTime.Today.ToString("MM-yyyy")+".txt",true);
+                ticket.Split('\n').ToList().ForEach(x => streamWriter.WriteLine(x));
+            }catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                streamWriter.Close();
+                streamWriter.Dispose();
+            }
+        }
 
+        public static void GuardarProductos(ArrayList arrayList)
+        {
+            JsonSerializerOptions opciones = new JsonSerializerOptions();
+            opciones.WriteIndented = true;
+            string jsonString=String.Empty;
+            StringBuilder sb = new StringBuilder();
+            foreach (object obj in arrayList)
+            {
+                sb.AppendLine(JsonSerializer.Serialize(obj,opciones));
+                jsonString=sb.ToString();
+            }
+            File.WriteAllText(path+"productos.json", jsonString);
+        }
 
         /// <summary>
         /// 

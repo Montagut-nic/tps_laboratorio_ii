@@ -14,14 +14,10 @@ namespace Formularios
     public partial class MenuBajaModificacionMiembro : Form
     {
         Cliente cliente;
-        public MenuBajaModificacionMiembro()
+        
+        public MenuBajaModificacionMiembro(Cliente miembro)
         {
-            cliente = null;
             InitializeComponent();
-        }
-
-        public MenuBajaModificacionMiembro(Cliente miembro) : this()
-        {
             cliente = miembro;
             txbApellido.Text = miembro.Apellido;
             txbEmail.Text = miembro.Mail.Address;

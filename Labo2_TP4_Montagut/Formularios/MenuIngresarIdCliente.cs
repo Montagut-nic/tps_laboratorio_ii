@@ -45,7 +45,7 @@ namespace Formularios
             Cliente cliente;
             try
             {
-                cliente = LogicaNegocio.BuscarClienteActivoPorId(txbIdDeCliente.Text);
+                cliente = LogicaNegocio.BuscarClienteActivoPorId(txbIdDeCliente.Text.Trim());
                 flagContinuar = true;
                 this.Close();
 
@@ -54,7 +54,7 @@ namespace Formularios
                     new MenuBajaModificacionMiembro(cliente).Show();
                 }else
                 {
-                    new MenuVenta(cliente).Show();
+                    new MenuVenta(true).Show();
                 }
             }
             catch (Exception ex)

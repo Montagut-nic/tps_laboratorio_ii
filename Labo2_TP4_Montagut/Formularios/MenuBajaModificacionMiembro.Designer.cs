@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuBajaModificacionMiembro));
             this.txbNombre = new System.Windows.Forms.TextBox();
             this.txbApellido = new System.Windows.Forms.TextBox();
             this.txbEmail = new System.Windows.Forms.TextBox();
@@ -43,14 +44,14 @@
             // 
             this.txbNombre.Location = new System.Drawing.Point(49, 49);
             this.txbNombre.Name = "txbNombre";
-            this.txbNombre.Size = new System.Drawing.Size(125, 27);
+            this.txbNombre.Size = new System.Drawing.Size(170, 27);
             this.txbNombre.TabIndex = 0;
             // 
             // txbApellido
             // 
             this.txbApellido.Location = new System.Drawing.Point(264, 49);
             this.txbApellido.Name = "txbApellido";
-            this.txbApellido.Size = new System.Drawing.Size(125, 27);
+            this.txbApellido.Size = new System.Drawing.Size(170, 27);
             this.txbApellido.TabIndex = 1;
             // 
             // txbEmail
@@ -93,6 +94,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.BackColor = System.Drawing.Color.Ivory;
             this.lblNombre.Location = new System.Drawing.Point(49, 26);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(64, 20);
@@ -102,6 +104,7 @@
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
+            this.lblApellido.BackColor = System.Drawing.Color.Ivory;
             this.lblApellido.Location = new System.Drawing.Point(264, 26);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(66, 20);
@@ -111,6 +114,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.Ivory;
             this.lblEmail.Location = new System.Drawing.Point(49, 113);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(52, 20);
@@ -121,6 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(534, 262);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblApellido);
@@ -131,8 +136,10 @@
             this.Controls.Add(this.txbEmail);
             this.Controls.Add(this.txbApellido);
             this.Controls.Add(this.txbNombre);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuBajaModificacionMiembro";
-            this.Text = "Menu dar de baja o modificar datos del miembro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Menu - Dar de baja o Modificar datos del miembro";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuBajaModificacionMiembro_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();

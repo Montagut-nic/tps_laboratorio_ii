@@ -17,9 +17,31 @@ namespace Formularios
             InitializeComponent();
         }
 
-        private void btnAgregarNuevoProducto_Click(object sender, EventArgs e)
+        private void btnAgregarGrano_Click(object sender, EventArgs e)
         {
+            this.Close();
+            if(new MenuNuevoGrano().ShowDialog() != DialogResult.Cancel)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+        }
 
+        private void btnAgregarMerch_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            if(new MenuNuevaMerch().ShowDialog() != DialogResult.Cancel)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+        }
+
+        private void btnAgregarProdElab_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            if(new MenuNuevoProdElaborado().ShowDialog() != DialogResult.Cancel)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
         }
     }
 }

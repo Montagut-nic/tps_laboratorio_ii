@@ -7,7 +7,25 @@
     <Compile Update="MenuBajaModificacionMiembro.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="MenuCambiarCantidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="MenuIngresarIdCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MenuModificarPrecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MenuNuevaMerch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MenuNuevoGrano.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MenuNuevoProdElaborado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MenuRemoverProducto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="MenuVenta.cs">

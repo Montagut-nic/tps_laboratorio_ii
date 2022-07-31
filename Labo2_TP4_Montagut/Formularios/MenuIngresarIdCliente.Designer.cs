@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuIngresarIdCliente));
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnContinuar = new System.Windows.Forms.Button();
             this.txbIdDeCliente = new System.Windows.Forms.TextBox();
@@ -45,7 +46,7 @@
             // 
             // btnContinuar
             // 
-            this.btnContinuar.Location = new System.Drawing.Point(167, 127);
+            this.btnContinuar.Location = new System.Drawing.Point(297, 127);
             this.btnContinuar.Name = "btnContinuar";
             this.btnContinuar.Size = new System.Drawing.Size(94, 29);
             this.btnContinuar.TabIndex = 1;
@@ -55,7 +56,7 @@
             // 
             // txbIdDeCliente
             // 
-            this.txbIdDeCliente.Location = new System.Drawing.Point(12, 55);
+            this.txbIdDeCliente.Location = new System.Drawing.Point(81, 48);
             this.txbIdDeCliente.Name = "txbIdDeCliente";
             this.txbIdDeCliente.PlaceholderText = "Ingrese el ID del cliente miembro";
             this.txbIdDeCliente.Size = new System.Drawing.Size(249, 27);
@@ -65,12 +66,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(299, 199);
+            this.BackColor = System.Drawing.Color.DarkGreen;
+            this.ClientSize = new System.Drawing.Size(403, 199);
             this.Controls.Add(this.txbIdDeCliente);
             this.Controls.Add(this.btnContinuar);
             this.Controls.Add(this.btnVolver);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuIngresarIdCliente";
-            this.Text = "Ingrese id del cliente miembro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Menu - Busqueda por ID";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuIngresarIdCliente_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();

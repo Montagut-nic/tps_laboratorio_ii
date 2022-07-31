@@ -27,6 +27,7 @@ namespace Formularios
                 LogicaNegocio.AgregarCliente(new Cliente(txbMail.Text,txbNombre.Text,txbApellido.Text,txbIdDni.Text));
                 flagContinuar = true;
                 this.Close();
+                new MenuVenta(true).Show();
             }
             catch (Exception ex)
             {
@@ -42,10 +43,11 @@ namespace Formularios
 
         private void MenuNuevoMiembro_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (flagContinuar)
+            if (!flagContinuar)
             {
-
+                Application.OpenForms[0].Show();
             }
+            
         }
     }
 }

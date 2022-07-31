@@ -32,7 +32,7 @@ namespace Formularios
                         new MenuNuevoMiembro().Show();
                     }else
                     {
-                        new MenuVenta().Show();
+                        new MenuVenta(false).Show();
                     }
                     break;
                 case "btnHistorial":

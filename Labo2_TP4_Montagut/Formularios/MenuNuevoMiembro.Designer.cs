@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuNuevoMiembro));
             this.txbNombre = new System.Windows.Forms.TextBox();
             this.txbApellido = new System.Windows.Forms.TextBox();
             this.txbMail = new System.Windows.Forms.TextBox();
@@ -64,6 +65,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.BackColor = System.Drawing.Color.Ivory;
             this.lblNombre.Location = new System.Drawing.Point(21, 31);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(64, 20);
@@ -73,6 +75,7 @@
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
+            this.lblApellido.BackColor = System.Drawing.Color.Ivory;
             this.lblApellido.Location = new System.Drawing.Point(224, 31);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(66, 20);
@@ -82,7 +85,8 @@
             // lblMail
             // 
             this.lblMail.AutoSize = true;
-            this.lblMail.Location = new System.Drawing.Point(21, 127);
+            this.lblMail.BackColor = System.Drawing.Color.Ivory;
+            this.lblMail.Location = new System.Drawing.Point(21, 137);
             this.lblMail.Name = "lblMail";
             this.lblMail.Size = new System.Drawing.Size(52, 20);
             this.lblMail.TabIndex = 6;
@@ -91,7 +95,8 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(224, 127);
+            this.lblId.BackColor = System.Drawing.Color.Ivory;
+            this.lblId.Location = new System.Drawing.Point(224, 137);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(56, 20);
             this.lblId.TabIndex = 7;
@@ -128,6 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(436, 285);
             this.Controls.Add(this.txbIdDni);
             this.Controls.Add(this.btnVolver);
@@ -139,8 +145,10 @@
             this.Controls.Add(this.txbMail);
             this.Controls.Add(this.txbApellido);
             this.Controls.Add(this.txbNombre);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuNuevoMiembro";
-            this.Text = "Menu Nuevo Miembro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Menu - Agregar Nuevo Miembro";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuNuevoMiembro_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();

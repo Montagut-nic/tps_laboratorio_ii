@@ -26,3 +26,9 @@ C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP4_Montagut\Formularios\ob
 C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP4_Montagut\Formularios\obj\Debug\net5.0-windows\Formularios.pdb
 C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP4_Montagut\Formularios\obj\Debug\net5.0-windows\Formularios.genruntimeconfig.cache
 C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP4_Montagut\Formularios\obj\Debug\net5.0-windows\ref\Formularios.dll
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP4_Montagut\Formularios\obj\Debug\net5.0-windows\Formularios.MenuCambiarCantidad.resources
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP4_Montagut\Formularios\obj\Debug\net5.0-windows\Formularios.MenuModificarPrecio.resources
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP4_Montagut\Formularios\obj\Debug\net5.0-windows\Formularios.MenuNuevaMerch.resources
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP4_Montagut\Formularios\obj\Debug\net5.0-windows\Formularios.MenuNuevoGrano.resources
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP4_Montagut\Formularios\obj\Debug\net5.0-windows\Formularios.MenuNuevoProdElaborado.resources
+C:\Users\nicom\source\repos\tps_laboratorio_ii\Labo2_TP4_Montagut\Formularios\obj\Debug\net5.0-windows\Formularios.MenuRemoverProducto.resources
