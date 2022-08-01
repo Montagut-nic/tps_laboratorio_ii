@@ -1,0 +1,231 @@
+{
+  "Talle": 3,
+  "Nombre": "buzo azul estampado",
+  "Cantidad": 8,
+  "Precio": 28,
+  "Tipo": 1
+}
+{
+  "PesoEnKilos": 22.989,
+  "Nombre": "avena integral",
+  "Cantidad": 22989,
+  "Precio": 0.5,
+  "Tipo": 2
+}
+{
+  "Marca": 1,
+  "Nombre": "medallon de lenteja 4u",
+  "Cantidad": 54,
+  "Precio": 420,
+  "Tipo": 1
+}
+{
+  "Talle": 1,
+  "Nombre": "buzo rojo panda",
+  "Cantidad": 78,
+  "Precio": 263.17,
+  "Tipo": 1
+}
+{
+  "Talle": 3,
+  "Nombre": "campera ecocuero",
+  "Cantidad": 29,
+  "Precio": 179.28,
+  "Tipo": 2
+}
+{
+  "Talle": 3,
+  "Nombre": "campera vintage",
+  "Cantidad": 81,
+  "Precio": 183,
+  "Tipo": 2
+}
+{
+  "Talle": 1,
+  "Nombre": "buzo gris",
+  "Cantidad": 65,
+  "Precio": 289.16,
+  "Tipo": 1
+}
+{
+  "Talle": 2,
+  "Nombre": "campera con camuflaje",
+  "Cantidad": 41,
+  "Precio": 133.62,
+  "Tipo": 2
+}
+{
+  "Talle": 2,
+  "Nombre": "remera de kirby",
+  "Cantidad": 83,
+  "Precio": 60.15,
+  "Tipo": 0
+}
+{
+  "Talle": 0,
+  "Nombre": "buzo fucsia",
+  "Cantidad": 74,
+  "Precio": 96.08,
+  "Tipo": 1
+}
+{
+  "Talle": 1,
+  "Nombre": "campera gastada vintage",
+  "Cantidad": 4,
+  "Precio": 233.06,
+  "Tipo": 2
+}
+{
+  "Talle": 0,
+  "Nombre": "remera goku ssj",
+  "Cantidad": 17,
+  "Precio": 203.42,
+  "Tipo": 0
+}
+{
+  "Talle": 3,
+  "Nombre": "remera freezer rosa",
+  "Cantidad": 27,
+  "Precio": 193.96,
+  "Tipo": 0
+}
+{
+  "PesoEnKilos": 26,
+  "Nombre": "mix de semillas energeticas",
+  "Cantidad": 26000,
+  "Precio": 22.82,
+  "Tipo": 6
+}
+{
+  "PesoEnKilos": 26,
+  "Nombre": "lentejas amarillas",
+  "Cantidad": 26000,
+  "Precio": 194.07,
+  "Tipo": 0
+}
+{
+  "PesoEnKilos": 8,
+  "Nombre": "semillas de chia",
+  "Cantidad": 8000,
+  "Precio": 128.08,
+  "Tipo": 3
+}
+{
+  "PesoEnKilos": 21,
+  "Nombre": "arroz yamani",
+  "Cantidad": 21000,
+  "Precio": 56.18,
+  "Tipo": 1
+}
+{
+  "PesoEnKilos": 24,
+  "Nombre": "garbanzo kabul",
+  "Cantidad": 24000,
+  "Precio": 178.72,
+  "Tipo": 4
+}
+{
+  "PesoEnKilos": 22,
+  "Nombre": "semillas de chia blancas",
+  "Cantidad": 22000,
+  "Precio": 199.13,
+  "Tipo": 3
+}
+{
+  "PesoEnKilos": 20,
+  "Nombre": "avena fina",
+  "Cantidad": 20000,
+  "Precio": 53.56,
+  "Tipo": 2
+}
+{
+  "PesoEnKilos": 5,
+  "Nombre": "mix de semillas dieteticas",
+  "Cantidad": 5000,
+  "Precio": 6.37,
+  "Tipo": 6
+}
+{
+  "PesoEnKilos": 16,
+  "Nombre": "porotos negros",
+  "Cantidad": 16000,
+  "Precio": 27.72,
+  "Tipo": 5
+}
+{
+  "PesoEnKilos": 25,
+  "Nombre": "arroz blanco",
+  "Cantidad": 25000,
+  "Precio": 46.27,
+  "Tipo": 1
+}
+{
+  "Marca": 0,
+  "Nombre": "hamburguesa de porotos",
+  "Cantidad": 68,
+  "Precio": 61,
+  "Tipo": 1
+}
+{
+  "Marca": 2,
+  "Nombre": "hamburguesa de garbanzos",
+  "Cantidad": 55,
+  "Precio": 123.06,
+  "Tipo": 1
+}
+{
+  "Marca": 2,
+  "Nombre": "leche de almendras",
+  "Cantidad": 53,
+  "Precio": 164.03,
+  "Tipo": 2
+}
+{
+  "Marca": 2,
+  "Nombre": "leche de almendra sabor chocolatada",
+  "Cantidad": 68,
+  "Precio": 177.03,
+  "Tipo": 2
+}
+{
+  "Marca": 1,
+  "Nombre": "leche de soja con vainilla",
+  "Cantidad": 16,
+  "Precio": 179.61,
+  "Tipo": 2
+}
+{
+  "Marca": 0,
+  "Nombre": "Leche de almendras sin azucar",
+  "Cantidad": 61,
+  "Precio": 60.63,
+  "Tipo": 2
+}
+{
+  "Marca": 2,
+  "Nombre": "hamburguesa de soja texturizada con cebolla caramelizada",
+  "Cantidad": 7,
+  "Precio": 100.99,
+  "Tipo": 1
+}
+{
+  "Marca": 1,
+  "Nombre": "hamburguesa de lentejas",
+  "Cantidad": 53,
+  "Precio": 53.94,
+  "Tipo": 1
+}
+{
+  "Marca": 0,
+  "Nombre": "hamburguesa de lentejas",
+  "Cantidad": 100,
+  "Precio": 50.61,
+  "Tipo": 1
+}
+{
+  "Marca": 0,
+  "Nombre": "hamburguesa de garbanzos y cebolla",
+  "Cantidad": 13,
+  "Precio": 54.12,
+  "Tipo": 1
+}
