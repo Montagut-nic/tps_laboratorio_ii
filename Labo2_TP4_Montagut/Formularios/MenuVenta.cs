@@ -17,18 +17,15 @@ namespace Formularios
     {
         ArrayList productos;
         Carrito compra;
-        
-        
+
 
         public MenuVenta(bool esCliente)
         {
             InitializeComponent();
-            productos = LogicaNegocio.CargarProductos();
+            Serializador serializador = new Serializador();
+            productos = serializador.Leer();
             compra = new Carrito(esCliente);
             ActualizarListboxProductos();
-            compra.ActualizarTiempoDescuento += ActualizarLabelDescuento;
-            compra.ActualizarTiempoDescuento += ActualizarLabelHora;
-            compra.iniciarTask();
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
@@ -45,12 +42,18 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// arualiza el datasource de la listbox de productos para que muestre que productos estan disponibles
+        /// </summary>
         private void ActualizarListboxProductos()
         {
             lsbProductos.DataSource = null;
             lsbProductos.DataSource = productos;
         }
 
+        /// <summary>
+        /// actualiza el texto del textbox con la informacion de los productos en la lista del carrito para conformar el ticket
+        /// </summary>
         private void ActualizarTxbTicket()
         {
             txbTicket.Text = compra.MostrarCarrito();
@@ -60,7 +63,6 @@ namespace Formularios
         {
             try 
             { 
-                
                 compra.AgregarAlCarrito(productos[lsbProductos.SelectedIndex],(int)nudCantidad.Value);
                 ActualizarTxbTicket();
                 ActualizarListboxProductos();
@@ -71,6 +73,9 @@ namespace Formularios
 
         }
 
+        /// <summary>
+        /// actualiza el label con la informacion y tiempo restante del descuento
+        /// </summary>
         private void ActualizarLabelDescuento()
         {
             if (lblDescuento.InvokeRequired)
@@ -78,7 +83,8 @@ namespace Formularios
                 DelegadoActualizarLabel actualizarLabel = ActualizarLabelDescuento;
                 lblDescuento.Invoke(actualizarLabel);
             }
-            else { 
+            else 
+            { 
                 DateTime finOferta;
                 int anio=DateTime.Today.Year;
                 int mes=DateTime.Today.Month;
@@ -92,18 +98,21 @@ namespace Formularios
                     mes = DateTime.Today.AddMonths(1).Month;
                 
                 }
-                finOferta = new DateTime(anio,mes, compra.SiguienteDescuento, 0, 0, 0, 0);
-                TimeSpan ts = finOferta - DateTime.Now;
+                finOferta = new DateTime(anio,mes, compra.SiguienteDescuento, 0, 0, 0);
+                TimeSpan ts = finOferta - new DateTime(DateTime.Now.Year,DateTime.Now.Month,DateTime.Now.Day,DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
                 lblDescuento.Text = compra.MostrarDescuento() + $" para los clientes del club sano y quedan {ts.ToString("dd' dia/s 'hh' hora/s 'mm' minuto/s 'ss' segundo/s'")} para aprovechar esta oferta";
             }
         }
 
+        /// <summary>
+        /// actualiza un label con la hora actual
+        /// </summary>
         private void ActualizarLabelHora()
         {
             if (lblHora.InvokeRequired)
             {
                 DelegadoActualizarLabel actualizarLabel = ActualizarLabelHora;
-                lblDescuento.Invoke(actualizarLabel);
+                lblHora.Invoke(actualizarLabel);
             }
             else
             {
@@ -114,7 +123,8 @@ namespace Formularios
 
         private void btnFinalizarVenta_Click(object sender, EventArgs e)
         {
-            LogicaNegocio.GuardarHistorialDeVentas(txbTicket.Text);
+            HistorialDeVentas historialDeVentas = new HistorialDeVentas();
+            historialDeVentas.Escribir(txbTicket.Text);
             this.Close();
         }
 
@@ -126,11 +136,24 @@ namespace Formularios
 
         private void MenuVenta_FormClosed(object sender, FormClosedEventArgs e)
         {
-           
-           LogicaNegocio.GuardarProductos(productos);
+            
+           Serializador serializador = new Serializador();
+            serializador.Escribir(productos);
            Application.OpenForms[0].Show();
         }
 
-        
+        private void MenuVenta_Load(object sender, EventArgs e)
+        {
+            compra.ActualizarTiempoDescuento += ActualizarLabelDescuento;
+            compra.ActualizarTiempoDescuento += ActualizarLabelHora;
+            compra.IniciarTask();
+        }
+
+        private void MenuVenta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (compra.EstaActivo) {
+            compra.CancellationTokenSource.Cancel(); 
+            }
+        }
     }
 }

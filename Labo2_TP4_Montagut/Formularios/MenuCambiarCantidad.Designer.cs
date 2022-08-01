@@ -85,10 +85,10 @@
             this.lsbProductos.FormattingEnabled = true;
             this.lsbProductos.HorizontalScrollbar = true;
             this.lsbProductos.ItemHeight = 20;
-            this.lsbProductos.Location = new System.Drawing.Point(181, 73);
+            this.lsbProductos.Location = new System.Drawing.Point(181, 53);
             this.lsbProductos.Name = "lsbProductos";
             this.lsbProductos.ScrollAlwaysVisible = true;
-            this.lsbProductos.Size = new System.Drawing.Size(338, 164);
+            this.lsbProductos.Size = new System.Drawing.Size(338, 184);
             this.lsbProductos.TabIndex = 3;
             // 
             // lblCantidad

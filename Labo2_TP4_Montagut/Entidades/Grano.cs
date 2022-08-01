@@ -9,8 +9,13 @@ namespace Entidades
 {
     public class Grano : Producto <Grano.ETipoGrano>, IStockeable
     {
-        
-  
+        /// <summary>
+        /// constructor publico de la clase Grano, su generic T es ETipoGrano
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="cantidad"></param>
+        /// <param name="precio"></param>
+        /// <param name="tipo"></param>
         public Grano(string nombre, int cantidad, float precio, ETipoGrano tipo) : base(nombre, cantidad, precio, tipo)
         {
         }
@@ -29,25 +34,42 @@ namespace Entidades
             MixSemillas
         }
 
+        /// <summary>
+        /// sobrecarga del metodo ToString, retorna un string para mostrar nombre y cantidad en stock del producto mientras se muestra en el MenuVenta
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"{this.Tipo}: {this.Nombre}, cantidad (en stock): {this.Cantidad} gramos";
         }
 
+        /// <summary>
+        /// retorna un string que muestra la informacion del grano de forma ordenada, recibe un bool para mostrar o no el precio unitario del producto
+        /// </summary>
+        /// <param name="mostrarPrecioUnitario"></param>
+        /// <returns></returns>
         public string Mostrar(bool mostrarPrecioUnitario)
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"{this.Tipo}: {this.Nombre}");
             sb.AppendLine($"\t\t Peso: {this.Cantidad} gr / {this.PesoEnKilos} kg");
-            sb.AppendLine($"\t\t Precio: {this.Precio}");
+            sb.AppendLine($"\t\t Precio: {this.Precio.ToString("0.00")}");
             if (mostrarPrecioUnitario)
             {
-                sb.Append($" ({this.Cantidad} x {(this.Precio / this.Cantidad).ToString("0.00")})");
+                sb.AppendLine($"\t\t ({this.Cantidad} x {(this.Precio / this.Cantidad).ToString("0.00")})");
             }
             sb.AppendLine();
             return sb.ToString();
         }
 
+        /// <summary>
+        /// implementacion del metodo agregar de la interfaz IStockeable, agrega el grano a una lista mientras reduce su cantidad en stock,
+        /// si el grano ya estaba en la lista aumenta cantidad y precio del grano de la lista en vez de agregarlo
+        /// </summary>
+        /// <param name="carritoProductos"></param>
+        /// <param name="cantidad"></param>
+        /// <param name="descuento"></param>
+        /// <exception cref="NoHayCantidadDelProductoException"></exception>
         public void Agregar(ArrayList carritoProductos, int cantidad, float descuento)
         {
             if (cantidad > Cantidad)
@@ -68,6 +90,12 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// implementacion del metodo quitar de la interfaz IStockeable, quita una cantidad o remueve por completo un grano de una lista de productos
+        /// </summary>
+        /// <param name="carritoProductos"></param>
+        /// <param name="cantidad"></param>
+        /// <exception cref="Exception"></exception>
         public void Quitar(ArrayList carritoProductos, int cantidad)
         {
             Grano producto = carritoProductos.OfType<Grano>().ToList().Find(item => item.Nombre == Nombre && item.Tipo == Tipo);

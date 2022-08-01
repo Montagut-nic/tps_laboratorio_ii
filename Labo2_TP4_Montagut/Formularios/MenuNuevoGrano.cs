@@ -19,7 +19,8 @@ namespace Formularios
         public MenuNuevoGrano()
         {
             InitializeComponent();
-            listaProductos = LogicaNegocio.CargarProductos();
+            Serializador serializador = new Serializador();
+            listaProductos = serializador.Leer();
             lsbTipo.Items.Add(Grano.ETipoGrano.Avena);
             lsbTipo.Items.Add(Grano.ETipoGrano.Lenteja);
             lsbTipo.Items.Add(Grano.ETipoGrano.Garbanzo);
@@ -43,7 +44,8 @@ namespace Formularios
                     else
                     {
                         listaProductos.Add(granoNuevo);
-                        LogicaNegocio.GuardarProductos(listaProductos);
+                        Serializador serializador = new Serializador();
+                        serializador.Escribir(listaProductos);
                         MessageBox.Show($"{granoNuevo.Nombre} fue agregado al stock exitosamente");
                         this.DialogResult = DialogResult.OK;
                         this.Close();

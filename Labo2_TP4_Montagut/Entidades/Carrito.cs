@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Entidades
@@ -19,25 +20,51 @@ namespace Entidades
         private bool aplicaDesc;
         public event DelegadoActualizarLabel ActualizarTiempoDescuento;
         private Task task;
+        private CancellationTokenSource cancellationTokenSource;
+        private CancellationToken token;
+
+        /// <summary>
+        /// Constructor del carrito, recibe un bool para determinar si debe aplicar un descuento a la compra
+        /// </summary>
+        /// <param name="desc"></param>
         public Carrito(bool desc)
         {
+            AsignarDescuento();
             listaProductos = new ArrayList();
             requiereMarca = false;
-            aplicaDesc = desc; 
+            aplicaDesc = desc;
+             
         }
 
-        public void iniciarTask()
+        /// <summary>
+        /// Inicia la task de la cuenta regresiva para el cambio de descuento e inicia un reloj en el MenuVenta
+        /// </summary>
+        public void IniciarTask()
         {
-            task = new Task(() =>
-            {
-                while (ActualizarTiempoDescuento is not null)
+            if (!EstaActivo) 
+            { 
+                cancellationTokenSource = new CancellationTokenSource();
+                token = cancellationTokenSource.Token;
+                task = new Task(() =>
                 {
-                    ActualizarTiempoDescuento.Invoke();
-                }
-            });
-            task.Start();
+                    while ( !token.IsCancellationRequested && ActualizarTiempoDescuento is not null)
+                    {
+                        ActualizarTiempoDescuento.Invoke();
+                        Thread.Sleep(500);
+                    }
+                });
+                task.Start();
+            }
         }
 
+        public bool EstaActivo
+        {
+            get { return task is not null && task.Status==TaskStatus.Running; }
+        }
+
+        /// <summary>
+        /// setea el descuento que debe aplicarse dependiendo del dia del mes
+        /// </summary>
         private void AsignarDescuento()
         {
             switch (DateTime.Today.Day)
@@ -116,7 +143,14 @@ namespace Entidades
 
         public int SiguienteDescuento { get=>siguienteDescuento; }
         public ArrayList Productos { get => listaProductos; }
+        public CancellationTokenSource CancellationTokenSource { get => cancellationTokenSource;}
 
+        /// <summary>
+        /// Recibe un objeto que es un tipo de producto y una cantidad, agrega el producto a la lista de productos del carrito
+        /// dependiendo tambien de la cantidad del producto en stock y aplica un descuento sobre el precio si corresponde
+        /// </summary>
+        /// <param name="prod"></param>
+        /// <param name="cantidad"></param>
         public void AgregarAlCarrito(object prod,int cantidad)
         {
             try
@@ -169,6 +203,11 @@ namespace Entidades
 
         }
 
+        /// <summary>
+        /// remueve por completo o quita una cantidad de un producto, dependiendo de la cantidad, de la lista de productos del carrito 
+        /// </summary>
+        /// <param name="prod"></param>
+        /// <param name="cantidad"></param>
         public void QuitarDelCarrito(object prod, int cantidad)
         {
             try
@@ -200,6 +239,10 @@ namespace Entidades
 
         }
 
+        /// <summary>
+        /// remueve todos los productos de la lista de productos del carrito, asegurandose de agregar sus cantidades en la lista de productos del stock
+        /// </summary>
+        /// <param name="productosArrayList"></param>
         public void VaciarCarrito(ArrayList productosArrayList)
         {
             if (Productos.Count != 0 && Productos is not null && productosArrayList is not null)
@@ -244,6 +287,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// retorna un string que contiene la informacion que conformara al ticket de la venta
+        /// </summary>
+        /// <returns></returns>
         public string MostrarCarrito()
         {
             total = 0;
@@ -255,6 +302,10 @@ namespace Entidades
             return sb.ToString();
         }
 
+        /// <summary>
+        /// retorna un string que informa sobre el descuento del dia
+        /// </summary>
+        /// <returns></returns>
         public string MostrarDescuento()
         {
             AsignarDescuento();

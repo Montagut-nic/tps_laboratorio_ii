@@ -13,157 +13,28 @@ namespace Entidades
     public static class LogicaNegocio 
     {
         private static Dictionary<int, Cliente> clientesMiembros;
-        private static string path;
-        public static int ultimoIdProducto;
-
 
         /// <summary>
         /// Constructor estatico de LogicaNegocio, carga la coleccion de clientes
         /// </summary>
         static LogicaNegocio()
         {
-            ultimoIdProducto = 0;
             clientesMiembros = new Dictionary<int, Cliente>();
-            path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            path += @"\ArchivosTPFinal\";
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
             CargarClientes();
         }
 
        /// <summary>
-       /// Carga la coleccion de clientes desde una base de datos, 
+       /// Carga una lista de clientes a partir de la base de datos, luego agrega los clientes a un dictionary de clientes 
        /// </summary>
         private static void CargarClientes()
         {
-            //TODO: cambiar por lectura .json
-            clientesMiembros.Add(1, new Cliente("rita@gmail.com","rita","montag","1"));
-            clientesMiembros.Add(2, new Cliente("nico@gmail.com", "nico", "montag", "2"));
+
+            List<Cliente> clientes = ManejadorBD.Leer();
+            clientes.ForEach(cliente => clientesMiembros.Add(cliente.Id, cliente));
         }
 
         /// <summary>
-        /// Devuelve un coleccion de productos desde un archivo .json, si existe el archivo, sino devuelve una coleccion vacia
-        /// </summary>
-        public static ArrayList CargarProductos() 
-        {
-            string archivo = string.Empty;
-            string[] registroRecuperado;
-            StringBuilder sb= new StringBuilder();
-            ArrayList listaProd = new ArrayList();
-            if (Directory.Exists(path)) 
-            {
-                string[] archivosEnElPath = Directory.GetFiles(path);
-                foreach (string pathArchivo in archivosEnElPath)
-                {
-                    if (pathArchivo.Contains("productos") && pathArchivo.Contains(".json"))
-                    {
-                        archivo = pathArchivo;
-                        break;
-                    }
-                }
-                if (!string.IsNullOrWhiteSpace(archivo))
-                {
-                    registroRecuperado = File.ReadAllLines(archivo);
-                    foreach (string line in registroRecuperado) 
-                    {
-                        sb.Append(line);
-                        if (line.EndsWith('}') )
-                        {
-                            if (sb.ToString().Contains("Marca"))
-                            {
-                                Elaborado prod = JsonSerializer.Deserialize<Elaborado>(sb.ToString());
-                                listaProd.Add(prod);
-                            }
-                            else if (sb.ToString().Contains("Talle"))
-                            {
-                                Merchandise prod = JsonSerializer.Deserialize<Merchandise>(sb.ToString());
-                                listaProd.Add(prod);
-                            }
-                            else
-                            {
-                                Grano prod = JsonSerializer.Deserialize<Grano>(sb.ToString());
-                                listaProd.Add(prod);
-                            }
-                            sb.Clear();
-                        }
-                    }
-                }
-            }
-            return listaProd;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
-        public static string LeerHistorialDeVentas()
-        {
-            string archivo = string.Empty; 
-            string registroRecuperado = string.Empty;
-            try 
-            {
-                if (Directory.Exists(path))
-                {
-                    string[] archivosEnElPath = Directory.GetFiles(path);
-                    foreach (string pathArchivo in archivosEnElPath)
-                    {
-                        if (pathArchivo.Contains(DateTime.Today.ToString("MM-yyyy")) && pathArchivo.Contains(".txt") )
-                        {
-                            archivo = pathArchivo;
-                            break;
-                        }
-                    }
-
-                    if (!string.IsNullOrEmpty(archivo))
-                    {
-                        registroRecuperado = File.ReadAllText(archivo);
-                    }
-                }
-                return registroRecuperado;
-                
-            }catch  (Exception e)
-            {
-                throw new Exception($"Error en el archivo del {DateTime.Today.ToString("MM - yyyy")} ubicado en {path}", e);
-            }
-        }
-
-        public static void GuardarHistorialDeVentas(string ticket)
-        {
-            StreamWriter streamWriter = null;
-            try
-            {
-                streamWriter = new StreamWriter(path+"Historial-De-Ventas-"+DateTime.Today.ToString("MM-yyyy")+".txt",true);
-                ticket.Split('\n').ToList().ForEach(x => streamWriter.WriteLine(x));
-            }catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                streamWriter.Close();
-                streamWriter.Dispose();
-            }
-        }
-
-        public static void GuardarProductos(ArrayList arrayList)
-        {
-            JsonSerializerOptions opciones = new JsonSerializerOptions();
-            opciones.WriteIndented = true;
-            string jsonString=String.Empty;
-            StringBuilder sb = new StringBuilder();
-            foreach (object obj in arrayList)
-            {
-                sb.AppendLine(JsonSerializer.Serialize(obj,opciones));
-                jsonString=sb.ToString();
-            }
-            File.WriteAllText(path+"productos.json", jsonString);
-        }
-
-        /// <summary>
-        /// 
+        /// Retorna un cliente activo a partir del id proporcionado, es buscado dentro del dictionary de clientes 
         /// </summary>
         /// <param name="stringId"></param>
         /// <returns></returns>
@@ -187,43 +58,55 @@ namespace Entidades
             return cliente;
         }
 
-        public static void AgregarCliente (Cliente cliente)
+        /// <summary>
+        /// agrega un cliente al dictionary o toma el lugar de un cliente inactivo, luego lo agrega o modifica en la base de datos de clientes
+        /// </summary>
+        /// <param name="cliente"></param>
+        public static void AgregarCliente (Cliente cliente, DelegadoActualizarMensaje delegado)
         {
             bool modificoClienteInactivo = false;
-            foreach (Cliente miembro in clientesMiembros.Values)
-            {
-                if (miembro.Activo)
+            try 
+            { 
+                foreach (Cliente miembro in clientesMiembros.Values)
                 {
-                    if(miembro.Id == cliente.Id)
+                    if (miembro.Activo)
                     {
-                        throw new Exception($"Ya existe un cliente registrado con el ID/DNI {cliente.Id}");
-                    }
-                    if(miembro.Mail == cliente.Mail)
-                    {
-                        throw new Exception($"Ya existe un cliente registrado con el mail {cliente.Mail}");
-                    }
-                }
-                else
-                {
-                    try { 
-                        if (miembro.Id == cliente.Id)
+                        if(miembro.Id == cliente.Id)
                         {
-                            miembro.Activo = true;
-                            miembro.Nombre = cliente.Nombre;
-                            miembro.Apellido = cliente.Apellido;
-                            miembro.Mail = cliente.Mail;
-                            modificoClienteInactivo = true;
-                            break;
+                            delegado($"Ya existe un cliente activo registrado con el ID/DNI {cliente.Id}");
                         }
-                    }catch (Exception ex)
+                        if(miembro.Mail == cliente.Mail)
+                        {
+                            delegado($"Ya existe un cliente activo registrado con el mail {cliente.Mail}");
+                        }
+                    }
+                    else
                     {
-                        throw new Exception($"Ocurrio un error con los parametros del cliente ingresado: {ex.Message}",ex);
+                        try { 
+                            if (miembro.Id == cliente.Id)
+                            {
+                                miembro.Activo = true;
+                                miembro.Nombre = cliente.Nombre;
+                                miembro.Apellido = cliente.Apellido;
+                                miembro.Mail = cliente.Mail;
+                                modificoClienteInactivo = true;
+                                ManejadorBD.ModificarCliente(miembro.Nombre, miembro.Apellido, miembro.Mail.Address, miembro.Id,miembro.Activo);
+                                break;
+                            }
+                        }catch (Exception ex)
+                        {
+                            delegado($"Ocurrio un error con los parametros del cliente ingresado: {ex.Message}");
+                        }
                     }
                 }
-            }
-            if (!modificoClienteInactivo)
+                if (!modificoClienteInactivo)
+                {
+                    clientesMiembros.Add(cliente.Id, cliente);
+                    ManejadorBD.AgregarCliente(cliente.Nombre, cliente.Apellido, cliente.Mail.Address, cliente.Id,cliente.Activo);
+                }
+            }catch (Exception)
             {
-                clientesMiembros.Add(cliente.Id, cliente);
+                throw;
             }
         }
     }

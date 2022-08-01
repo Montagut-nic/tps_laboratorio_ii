@@ -126,6 +126,7 @@
             this.Name = "MenuStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu - Stock";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuStock_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -18,7 +18,8 @@ namespace Formularios
             InitializeComponent();
             try 
             { 
-                txbHistorialDeVentas.Text = LogicaNegocio.LeerHistorialDeVentas();
+                HistorialDeVentas historialDeVentas = new HistorialDeVentas();
+                txbHistorialDeVentas.Text = historialDeVentas.Leer();
             }catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);

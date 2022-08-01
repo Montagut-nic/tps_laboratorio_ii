@@ -71,7 +71,7 @@
             this.btnBajaModificacionMiembro.Name = "btnBajaModificacionMiembro";
             this.btnBajaModificacionMiembro.Size = new System.Drawing.Size(175, 90);
             this.btnBajaModificacionMiembro.TabIndex = 3;
-            this.btnBajaModificacionMiembro.Text = " modificar datos de un cliente Miembro del Club Sano";
+            this.btnBajaModificacionMiembro.Text = " Dar de baja o Modificar datos de un cliente Miembro del Club Sano";
             this.btnBajaModificacionMiembro.UseVisualStyleBackColor = true;
             this.btnBajaModificacionMiembro.Click += new System.EventHandler(this.btnAbrirMenu_Click);
             // 

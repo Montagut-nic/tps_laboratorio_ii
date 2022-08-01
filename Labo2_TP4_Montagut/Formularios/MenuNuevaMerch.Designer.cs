@@ -51,22 +51,23 @@
             // lsbTalle
             // 
             this.lsbTalle.FormattingEnabled = true;
+            this.lsbTalle.HorizontalScrollbar = true;
             this.lsbTalle.ItemHeight = 20;
-            this.lsbTalle.Location = new System.Drawing.Point(27, 188);
+            this.lsbTalle.Location = new System.Drawing.Point(273, 128);
             this.lsbTalle.Name = "lsbTalle";
-            this.lsbTalle.Size = new System.Drawing.Size(164, 24);
+            this.lsbTalle.Size = new System.Drawing.Size(163, 64);
             this.lsbTalle.TabIndex = 0;
             // 
             // txbNombre
             // 
             this.txbNombre.Location = new System.Drawing.Point(27, 51);
             this.txbNombre.Name = "txbNombre";
-            this.txbNombre.Size = new System.Drawing.Size(164, 27);
+            this.txbNombre.Size = new System.Drawing.Size(308, 27);
             this.txbNombre.TabIndex = 2;
             // 
             // nudCantidad
             // 
-            this.nudCantidad.Location = new System.Drawing.Point(253, 51);
+            this.nudCantidad.Location = new System.Drawing.Point(459, 165);
             this.nudCantidad.Minimum = new decimal(new int[] {
             1,
             0,
@@ -84,7 +85,7 @@
             // nudPrecio
             // 
             this.nudPrecio.DecimalPlaces = 2;
-            this.nudPrecio.Location = new System.Drawing.Point(253, 128);
+            this.nudPrecio.Location = new System.Drawing.Point(459, 52);
             this.nudPrecio.Minimum = new decimal(new int[] {
             1,
             0,
@@ -101,7 +102,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(27, 238);
+            this.btnCancelar.Location = new System.Drawing.Point(27, 228);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 29);
             this.btnCancelar.TabIndex = 5;
@@ -111,7 +112,7 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(309, 238);
+            this.btnConfirmar.Location = new System.Drawing.Point(515, 228);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(94, 29);
             this.btnConfirmar.TabIndex = 6;
@@ -143,7 +144,7 @@
             // 
             this.lblTalle.AutoSize = true;
             this.lblTalle.BackColor = System.Drawing.Color.Ivory;
-            this.lblTalle.Location = new System.Drawing.Point(27, 165);
+            this.lblTalle.Location = new System.Drawing.Point(273, 105);
             this.lblTalle.Name = "lblTalle";
             this.lblTalle.Size = new System.Drawing.Size(39, 20);
             this.lblTalle.TabIndex = 9;
@@ -153,7 +154,7 @@
             // 
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.BackColor = System.Drawing.Color.Ivory;
-            this.lblCantidad.Location = new System.Drawing.Point(253, 28);
+            this.lblCantidad.Location = new System.Drawing.Point(459, 128);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(69, 20);
             this.lblCantidad.TabIndex = 10;
@@ -163,7 +164,7 @@
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.BackColor = System.Drawing.Color.Ivory;
-            this.lblPrecio.Location = new System.Drawing.Point(253, 105);
+            this.lblPrecio.Location = new System.Drawing.Point(459, 28);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(50, 20);
             this.lblPrecio.TabIndex = 11;
@@ -176,10 +177,11 @@
             // lsbTipoPrenda
             // 
             this.lsbTipoPrenda.FormattingEnabled = true;
+            this.lsbTipoPrenda.HorizontalScrollbar = true;
             this.lsbTipoPrenda.ItemHeight = 20;
             this.lsbTipoPrenda.Location = new System.Drawing.Point(27, 128);
             this.lsbTipoPrenda.Name = "lsbTipoPrenda";
-            this.lsbTipoPrenda.Size = new System.Drawing.Size(150, 24);
+            this.lsbTipoPrenda.Size = new System.Drawing.Size(211, 64);
             this.lsbTipoPrenda.TabIndex = 12;
             // 
             // MenuNuevaMerch
@@ -187,7 +189,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
-            this.ClientSize = new System.Drawing.Size(425, 289);
+            this.ClientSize = new System.Drawing.Size(638, 282);
             this.Controls.Add(this.lsbTipoPrenda);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblCantidad);

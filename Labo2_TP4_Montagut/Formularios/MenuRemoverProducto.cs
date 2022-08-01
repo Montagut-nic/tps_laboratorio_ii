@@ -18,7 +18,8 @@ namespace Formularios
         public MenuRemoverProducto()
         {
             InitializeComponent();
-            listaProductos = LogicaNegocio.CargarProductos();
+            Serializador serializador = new Serializador();
+            listaProductos = serializador.Leer();
             lsbProductos.DataSource = listaProductos;
         }
 
@@ -27,7 +28,8 @@ namespace Formularios
             if(listaProductos is not null && lsbProductos.SelectedItem is not null)
             {
                 listaProductos.Remove(lsbProductos.SelectedItem);
-                LogicaNegocio.GuardarProductos(listaProductos);
+                Serializador serializador = new Serializador();
+                serializador.Escribir(listaProductos);
                 MessageBox.Show("Se ha removido el producto exitosamente");
                 this.Close();
             }

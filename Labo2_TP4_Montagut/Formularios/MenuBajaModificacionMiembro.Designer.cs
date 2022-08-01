@@ -38,32 +38,36 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
+            this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txbNombre
             // 
-            this.txbNombre.Location = new System.Drawing.Point(49, 49);
+            this.txbNombre.Location = new System.Drawing.Point(22, 55);
+            this.txbNombre.MaxLength = 50;
             this.txbNombre.Name = "txbNombre";
-            this.txbNombre.Size = new System.Drawing.Size(170, 27);
+            this.txbNombre.Size = new System.Drawing.Size(218, 27);
             this.txbNombre.TabIndex = 0;
             // 
             // txbApellido
             // 
             this.txbApellido.Location = new System.Drawing.Point(264, 49);
+            this.txbApellido.MaxLength = 50;
             this.txbApellido.Name = "txbApellido";
             this.txbApellido.Size = new System.Drawing.Size(170, 27);
             this.txbApellido.TabIndex = 1;
             // 
             // txbEmail
             // 
-            this.txbEmail.Location = new System.Drawing.Point(49, 139);
+            this.txbEmail.Location = new System.Drawing.Point(22, 139);
+            this.txbEmail.MaxLength = 50;
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(218, 27);
             this.txbEmail.TabIndex = 2;
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(372, 204);
+            this.btnVolver.Location = new System.Drawing.Point(12, 255);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(150, 40);
             this.btnVolver.TabIndex = 3;
@@ -73,7 +77,7 @@
             // 
             // btnDarDeBaja
             // 
-            this.btnDarDeBaja.Location = new System.Drawing.Point(372, 126);
+            this.btnDarDeBaja.Location = new System.Drawing.Point(489, 26);
             this.btnDarDeBaja.Name = "btnDarDeBaja";
             this.btnDarDeBaja.Size = new System.Drawing.Size(150, 40);
             this.btnDarDeBaja.TabIndex = 4;
@@ -83,7 +87,7 @@
             // 
             // btnConfirmarCambios
             // 
-            this.btnConfirmarCambios.Location = new System.Drawing.Point(49, 204);
+            this.btnConfirmarCambios.Location = new System.Drawing.Point(489, 107);
             this.btnConfirmarCambios.Name = "btnConfirmarCambios";
             this.btnConfirmarCambios.Size = new System.Drawing.Size(150, 40);
             this.btnConfirmarCambios.TabIndex = 5;
@@ -95,7 +99,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.Color.Ivory;
-            this.lblNombre.Location = new System.Drawing.Point(49, 26);
+            this.lblNombre.Location = new System.Drawing.Point(22, 26);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(64, 20);
             this.lblNombre.TabIndex = 6;
@@ -115,18 +119,29 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.Color.Ivory;
-            this.lblEmail.Location = new System.Drawing.Point(49, 113);
+            this.lblEmail.Location = new System.Drawing.Point(22, 107);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(52, 20);
             this.lblEmail.TabIndex = 8;
             this.lblEmail.Text = "e-mail";
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.BackColor = System.Drawing.Color.Red;
+            this.lblError.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblError.Location = new System.Drawing.Point(24, 188);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 20);
+            this.lblError.TabIndex = 9;
             // 
             // MenuBajaModificacionMiembro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
-            this.ClientSize = new System.Drawing.Size(534, 262);
+            this.ClientSize = new System.Drawing.Size(651, 307);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
@@ -157,5 +172,6 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblError;
     }
 }

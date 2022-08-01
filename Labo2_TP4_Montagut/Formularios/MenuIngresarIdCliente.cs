@@ -36,7 +36,7 @@ namespace Formularios
         }
 
         /// <summary>
-        /// Evento para buscar el id y generar el menu correspondiente
+        /// Evento para buscar el id y generar el menu correspondiente segun el boton de origen
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -49,7 +49,7 @@ namespace Formularios
                 flagContinuar = true;
                 this.Close();
 
-                if (btnOrigen.Text == "Dar de baja o modificar datos de un cliente Miembro del Club Sano")
+                if (btnOrigen.Text.Contains("baja"))
                 {
                     new MenuBajaModificacionMiembro(cliente).Show();
                 }else

@@ -217,7 +217,9 @@
             this.Name = "MenuVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu - Venta";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuVenta_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuVenta_FormClosed);
+            this.Load += new System.EventHandler(this.MenuVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.elaboradoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.granoBindingSource)).EndInit();

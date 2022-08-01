@@ -28,7 +28,7 @@ namespace Formularios
         {
             try
             {
-                cliente.CambiarInformacion(txbEmail.Text, txbNombre.Text, txbApellido.Text);
+                cliente.CambiarInformacion(txbEmail.Text, txbNombre.Text, txbApellido.Text, ActualizarLabel);
                 MessageBox.Show("Se han realizado los cambios satisfactoriamente");
                 this.Close();
             }
@@ -42,6 +42,12 @@ namespace Formularios
         {
             cliente.Activo = false;
             cliente.Mail = null;
+            try { 
+            ManejadorBD.BajaCliente(cliente.Id);
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             MessageBox.Show($"Se ha dado de baja al cliente con el id {cliente.Id}");
             this.Close();
         }
@@ -54,6 +60,15 @@ namespace Formularios
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        /// <summary>
+        /// actualiza el texto del label con el string recibido
+        /// </summary>
+        /// <param name="msj"></param>
+        public void ActualizarLabel(string msj)
+        {
+            lblError.Text = msj;
         }
     }
 }

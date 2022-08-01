@@ -18,7 +18,8 @@ namespace Formularios
         public MenuStock()
         {
             InitializeComponent();
-            productosList = LogicaNegocio.CargarProductos();
+            Serializador serializador = new Serializador();
+            productosList = serializador.Leer();
             ActualizarTxbStock();
         }
 
@@ -41,7 +42,6 @@ namespace Formularios
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
-            Application.OpenForms[0].Show();
         }
 
         private void btnRemoverProd_Click(object sender, EventArgs e)
@@ -69,14 +69,22 @@ namespace Formularios
             }
         }
 
+        /// <summary>
+        /// Actualiza el texto de la textbox con la informacion de los productos en el stock
+        /// </summary>
         private void ActualizarTxbStock()
         {
-
-            productosList = LogicaNegocio.CargarProductos();
+            Serializador serializador = new Serializador();
+            productosList = serializador.Leer();
             txbStock.Text=String.Empty;
             productosList.OfType<Elaborado>().ToList().ForEach(item => txbStock.Text += item.Mostrar(false));
             productosList.OfType<Grano>().ToList().ForEach(item => txbStock.Text += item.Mostrar(false));
             productosList.OfType<Merchandise>().ToList().ForEach(item => txbStock.Text += item.Mostrar(false));
+        }
+
+        private void MenuStock_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.OpenForms[0].Show();
         }
     }
 }

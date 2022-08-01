@@ -70,6 +70,16 @@ namespace Entidades
         public int Id { get => id; set => id = value; }
         public bool Activo { get => activo; set => activo = value; }
 
+        /// <summary>
+        /// constructor publico de la clase cliente, hecho para el ingreso manual de un nuevo cliente, solo recibe strings
+        /// el cliente construido tendra activo=true
+        /// </summary>
+        /// <param name="mail"></param>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="stringId"></param>
+        /// <exception cref="Exception"></exception>
+        /// <exception cref="FormatException"></exception>
         public Cliente(string mail, string nombre, string apellido, string stringId)
         {
             int id;
@@ -93,32 +103,84 @@ namespace Entidades
             this.Activo = true;
         }
 
+        /// <summary>
+        /// constructor publico de la clase cliente, hecho para la carga desde la base de datos, el cliente puede 
+        /// tener mail null si no es activo 
+        /// </summary>
+        /// <param name="mail"></param>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="stringId"></param>
+        /// <param name="activo"></param>
+        /// <exception cref="Exception"></exception>
+        /// <exception cref="FormatException"></exception>
+        public Cliente(string mail, string nombre, string apellido, string stringId, int activo)
+        {
+            int id;
+            if (activo == 1 && string.IsNullOrWhiteSpace(mail) )
+            {
+                throw new Exception($"el mail de id {stringId} en la BD no deberia estar vacio");
+            }
+            if (!string.IsNullOrWhiteSpace(mail) && !MailAddress.TryCreate(mail, out _))
+            {
+                throw new FormatException($"id {stringId} en la BD no tiene un mail valido");
+            }
+            if(string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(apellido) || string.IsNullOrWhiteSpace(stringId))
+            {
+                throw new Exception($"hay campos vacios en la BD cuando no deberia");
+            }
+            if (!int.TryParse(stringId.Trim(), out id) || id <= 0)
+            {
+                throw new FormatException("un cliente en la BD tiene un id invalido");
+            }
+            if (string.IsNullOrWhiteSpace(mail))
+            {
+                this.Mail = null;
+            }
+            else
+            {
+                this.Mail = new MailAddress(mail);
+            }
+            this.Nombre= nombre;
+            this.Apellido= apellido;
+            this.Id = id;
+            if(activo == 1)
+            {
+                this.Activo = true;
+            }
+            else
+            {
+                this.Activo= false;
+            }
+        }
 
-       
-        
+
+
+
 
         /// <summary>
-        /// Cambia la informacion del cliente, lanza una FormatException si algun parametro no es valido
+        /// Cambia la informacion del cliente y aplica los cambios en la base de datos
         /// </summary>
         /// <param name="mail"></param>
         /// <param name="nombre"></param>
         /// <param name="apellido"></param>
         /// <exception cref="FormatException"></exception>
-        public void CambiarInformacion(string mail, string nombre, string apellido)
+        public void CambiarInformacion(string mail, string nombre, string apellido, DelegadoActualizarMensaje delegado)
         {
             if (!MailAddress.TryCreate(mail,out _))
             {
-                throw new FormatException("No se ingreso un mail valido");
+                delegado("No se ingreso un mail valido");
             }
             try
             {
                 Mail = new MailAddress(mail);
                 Nombre = nombre;
                 Apellido = apellido;
+                ManejadorBD.ModificarCliente(Nombre,Apellido,Mail.Address,Id,Activo);
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                delegado(ex.Message);
             }
 
         }

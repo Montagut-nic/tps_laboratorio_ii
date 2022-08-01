@@ -19,7 +19,8 @@ namespace Formularios
         public MenuNuevaMerch()
         {
             InitializeComponent();
-            listaProductos = LogicaNegocio.CargarProductos();
+            Serializador serializador = new Serializador();
+            listaProductos = serializador.Leer();
             lsbTipoPrenda.Items.Add(Merchandise.ETipoPrenda.Remera);
             lsbTipoPrenda.Items.Add(Merchandise.ETipoPrenda.Buzo);
             lsbTipoPrenda.Items.Add(Merchandise.ETipoPrenda.Campera);
@@ -50,7 +51,8 @@ namespace Formularios
                     else
                     {
                         listaProductos.Add(merchNueva);
-                        LogicaNegocio.GuardarProductos(listaProductos);
+                        Serializador serializador= new Serializador();
+                        serializador.Escribir(listaProductos);
                         MessageBox.Show($"{merchNueva.Nombre} fue agregada al stock exitosamente");
                         this.DialogResult = DialogResult.OK;
                         this.Close();

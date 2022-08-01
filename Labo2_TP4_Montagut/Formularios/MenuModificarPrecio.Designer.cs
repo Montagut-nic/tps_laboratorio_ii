@@ -52,7 +52,7 @@
             // nudPrecioNuevo
             // 
             this.nudPrecioNuevo.DecimalPlaces = 2;
-            this.nudPrecioNuevo.Location = new System.Drawing.Point(12, 275);
+            this.nudPrecioNuevo.Location = new System.Drawing.Point(12, 291);
             this.nudPrecioNuevo.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -75,7 +75,8 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(12, 252);
+            this.lblPrecio.BackColor = System.Drawing.Color.Ivory;
+            this.lblPrecio.Location = new System.Drawing.Point(12, 268);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(50, 20);
             this.lblPrecio.TabIndex = 2;

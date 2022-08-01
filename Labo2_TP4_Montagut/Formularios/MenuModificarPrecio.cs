@@ -18,7 +18,8 @@ namespace Formularios
         public MenuModificarPrecio()
         {
             InitializeComponent();
-            listaProductos = LogicaNegocio.CargarProductos();
+            Serializador serializador = new Serializador();
+            listaProductos = serializador.Leer();
             lsbProductos.DataSource = listaProductos;
         }
 
@@ -52,7 +53,8 @@ namespace Formularios
                             }
                             break;
                     }
-                    LogicaNegocio.GuardarProductos(listaProductos);
+                    Serializador serializador = new Serializador();
+                    serializador.Escribir(listaProductos);
                     MessageBox.Show("Se ha modificado el producto exitosamente");
                     this.Close();
                 }

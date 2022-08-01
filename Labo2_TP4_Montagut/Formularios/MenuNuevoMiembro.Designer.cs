@@ -39,11 +39,13 @@
             this.btnContinuar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.txbIdDni = new System.Windows.Forms.TextBox();
+            this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txbNombre
             // 
             this.txbNombre.Location = new System.Drawing.Point(21, 54);
+            this.txbNombre.MaxLength = 50;
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(175, 27);
             this.txbNombre.TabIndex = 0;
@@ -51,6 +53,7 @@
             // txbApellido
             // 
             this.txbApellido.Location = new System.Drawing.Point(224, 54);
+            this.txbApellido.MaxLength = 50;
             this.txbApellido.Name = "txbApellido";
             this.txbApellido.Size = new System.Drawing.Size(175, 27);
             this.txbApellido.TabIndex = 1;
@@ -58,6 +61,7 @@
             // txbMail
             // 
             this.txbMail.Location = new System.Drawing.Point(21, 160);
+            this.txbMail.MaxLength = 50;
             this.txbMail.Name = "txbMail";
             this.txbMail.Size = new System.Drawing.Size(175, 27);
             this.txbMail.TabIndex = 2;
@@ -104,7 +108,7 @@
             // 
             // btnContinuar
             // 
-            this.btnContinuar.Location = new System.Drawing.Point(305, 229);
+            this.btnContinuar.Location = new System.Drawing.Point(315, 297);
             this.btnContinuar.Name = "btnContinuar";
             this.btnContinuar.Size = new System.Drawing.Size(94, 29);
             this.btnContinuar.TabIndex = 8;
@@ -114,7 +118,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(21, 229);
+            this.btnVolver.Location = new System.Drawing.Point(12, 297);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(94, 29);
             this.btnVolver.TabIndex = 9;
@@ -129,12 +133,23 @@
             this.txbIdDni.Size = new System.Drawing.Size(175, 27);
             this.txbIdDni.TabIndex = 10;
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.BackColor = System.Drawing.Color.Red;
+            this.lblError.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblError.Location = new System.Drawing.Point(23, 213);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 20);
+            this.lblError.TabIndex = 11;
+            // 
             // MenuNuevoMiembro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
-            this.ClientSize = new System.Drawing.Size(436, 285);
+            this.ClientSize = new System.Drawing.Size(436, 338);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.txbIdDni);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnContinuar);
@@ -167,5 +182,6 @@
         private System.Windows.Forms.Button btnContinuar;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.TextBox txbIdDni;
+        private System.Windows.Forms.Label lblError;
     }
 }

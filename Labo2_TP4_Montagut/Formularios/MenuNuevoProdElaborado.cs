@@ -18,7 +18,8 @@ namespace Formularios
         public MenuNuevoProdElaborado()
         {
             InitializeComponent();
-            listaProductos = LogicaNegocio.CargarProductos();
+            Serializador serializador = new Serializador();
+            listaProductos = serializador.Leer();
             lsbMarca.Items.Add(Elaborado.EMarca.NotCorp);
             lsbMarca.Items.Add(Elaborado.EMarca.GranjaDeLaLuna);
             lsbMarca.Items.Add(Elaborado.EMarca.Hierbalex);
@@ -41,7 +42,8 @@ namespace Formularios
                     else
                     {
                         listaProductos.Add(prodElaboradoNuevo);
-                        LogicaNegocio.GuardarProductos(listaProductos);
+                        Serializador serializador = new Serializador();
+                        serializador.Escribir(listaProductos);
                         MessageBox.Show($"{prodElaboradoNuevo.Nombre} fue agregado al stock exitosamente");
                         this.DialogResult = DialogResult.OK;
                         this.Close();

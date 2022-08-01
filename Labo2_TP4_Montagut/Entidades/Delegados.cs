@@ -7,5 +7,6 @@ using System.Threading.Tasks;
 namespace Entidades
 {
     public delegate void DelegadoActualizarLabel();
+    public delegate void DelegadoActualizarMensaje (string x);
     
 }
